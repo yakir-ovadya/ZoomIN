@@ -1,0 +1,24 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<body style="background-color:#6495ED;">
+<center>
+{% if user.is_authenticated %}
+  Hi {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+{% else %}
+  <p>אתה לא מחובר</p>
+  <p>נא לבצע התחברות</p>
+  <a href="{% url 'login' %}">Log In</a>
+  <a href="{% url 'signup' %}">Sign Up</a>
+  <p><a href="{% url 'password_reset' %}">Reset Password</a></p>
+{% endif %}
+<img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
+  </center>
+</body>
+{% endblock %}
