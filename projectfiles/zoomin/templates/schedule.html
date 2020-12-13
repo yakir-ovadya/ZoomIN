@@ -1,0 +1,129 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}מערכת שעות{% endblock %}
+
+{% block content %}
+<html>
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        input {
+            text-align: right;
+        }
+        td {
+            text-align: right;
+        }
+        th {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body style="background-color:#6495ED;">
+    <center>
+        <h2>מערכת שעות</h2>
+
+        <table style="width:100%">
+            <tr>
+                <th>שישי</th>
+                <th>חמישי</th>
+                <th>רביעי</th>
+                <th>שלישי</th>
+                <th>שני</th>
+                <th>ראשון</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday8" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday8" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday8" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday8" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday8" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday8" value="הוסף שיעור" /></td>
+                <th>8:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday9" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday9" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday9" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday9" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday9" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday9" value="הוסף שיעור" /></td>
+                <th>9:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday10" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday10" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday10" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday10" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday10" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday10" value="הוסף שיעור" /></td>
+                <th>10:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday11" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday11" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday11" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday11" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday11" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday11" value="הוסף שיעור" /></td>
+                <th>11:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday12" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday12" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday12" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday12" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday12" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday12" value="הוסף שיעור" /></td>
+                <th>12:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday13" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday13" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday13" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday13" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday13" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday13" value="הוסף שיעור" /></td>
+                <th>13:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday14" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday14" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday14" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday14" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday14" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday14" value="הוסף שיעור" /></td>
+                <th>14:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday15" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday15" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday15" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday15" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday15" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday15" value="הוסף שיעור" /></td>
+                <th>15:00</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="sunday16" value="הוסף שיעור" /></td>
+                <td><input type="text" id="monday16" value="הוסף שיעור" /></td>
+                <td><input type="text" id="tuesday16" value="הוסף שיעור" /></td>
+                <td><input type="text" id="wensday16" value="הוסף שיעור" /></td>
+                <td><input type="text" id="thursday16" value="הוסף שיעור" /></td>
+                <td><input type="text" id="friday16" value="הוסף שיעור" /></td>
+                <th>16:00</th>
+            </tr>
+        </table>
+        <button type="button" onclick="alert('השינויים נשמרו בהצלחה!')">!שמירת שינויים</button>
+    </center>
+</body>
+{% endblock %}
