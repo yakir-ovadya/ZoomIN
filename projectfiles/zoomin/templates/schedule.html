@@ -5,7 +5,26 @@
 
 {% block content %}
 <html>
+
 <head>
+    <style>
+a:link, a:visited {
+  background-color: #4cafa5;
+  color: black;
+  border: 2px solid black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #4cafa5;
+  color: white;
+}
+</style>
+    <center><a href="{% url 'home' %}">ZoomIn </a></center>
+
     <style>
         table, th, td {
             border: 1px solid black;

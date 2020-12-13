@@ -9,9 +9,7 @@ from django.views import generic
 class ScheduleView(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
+
     template_name = 'schedule.html'
 
-class HomeAfterLogin(generic.CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login')
-    template_name = 'homeaftorlogin.html'
+

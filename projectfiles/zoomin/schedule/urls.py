@@ -1,10 +1,10 @@
 # schedule/urls.py
 from django.urls import path
 
-from .views import ScheduleView, HomeAfterLogin
+from .views import ScheduleView
 
 
 urlpatterns = [
-    path('/schedule', ScheduleView.as_view(), name='schedule'),
-    path('', HomeAfterLogin.as_view(), name='schedule'),
+    path('schedule/', ScheduleView.as_view(), name='schedule'),
 ]
+
