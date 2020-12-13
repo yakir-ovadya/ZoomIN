@@ -1,0 +1,38 @@
+<!-- templates/home.html-->
+{% extends 'base.html' %}
+
+{% block title %}UsernameRecovery:{% endblock %}
+
+{% block content %}
+<html dir="rtl">
+<head>
+<title>UsernameRecovery</title>
+ <style type="text/css">
+     h1 {
+         text-align:center
+      }
+     h2 {
+         text-align:center
+     }
+     p {
+         text-align: right
+     }
+     label {
+         text-align:left
+     }
+ </style>
+</head>
+
+<body style="background-color:#6495ED;">
+<h1>שחזור שם משתמש</h1>
+ <h2>על מנת לשחזר את שם המשתמש נא לבצע את הפעולות הבאות:</h2>
+<h3>נא למלא את השדות החסרים:</h3>
+<p><label>*שם פרטי:</label><input type="text" id="First Name" value=""></p>
+<p><label>*שם משפחה:</label><input type="text" id="Last Name" value=""></p>
+<p><label>*תעודת זהות:</label><input type="text" id="ID" value=""></p>
+<p><label>*כתובת מייל:</label><input type="text" id="Email Address" value=""></p>
+<p>לאישור לחץ<a href="/account/login">כאן</a> </p> <!-- ללא משיכת נתונים מהדתה ביס עדיין-->
+<center><p>להתחברות לחץ <a href="/account/login">כאן</a></p></center>
+</body>
+{% endblock %}
+</html>
