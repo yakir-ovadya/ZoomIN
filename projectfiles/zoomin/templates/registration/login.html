@@ -5,12 +5,14 @@
 
 {% block content %}
 <body style="background-color:#6495ED;">
+
 <center>
   <h2>:התחברות לאתר</h2>
 <form method="post">
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">התחבר</button>
+
 
 </form>
   <img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
