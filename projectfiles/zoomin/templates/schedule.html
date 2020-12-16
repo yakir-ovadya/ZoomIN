@@ -1,15 +1,18 @@
-<!-- templates/home.html-->
 {% extends 'base.html' %}
 
-{% block title %}מערכת שעות{% endblock %}
+{% block title %}Login{% endblock %}
 
 {% block content %}
-<html>
 
-<head>
-    <style>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+ <style>
 a:link, a:visited {
-  background-color: #4cafa5;
+  background-color: #3498DB;
   color: black;
   border: 2px solid black;
   padding: 10px 20px;
@@ -23,9 +26,20 @@ a:hover, a:active {
   color: white;
 }
 </style>
-    <center><a href="{% url 'home' %}">ZoomIn </a></center>
 
-    <style>
+<body style="background-color:#6495ED;">
+<center>
+  <h2>מערכת שעות</h2>
+<div class="w3-bar w3-border w3-light-black">
+  <a href="{% url 'home' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="{% url 'grades' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+  <a href="{% url 'calendar' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
+  <a href="{% url 'schedule' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
+  <a href="{% url 'presence' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+  <a href="{% url 'bulletin_board' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">לוח מודעות</a>
+  <a href="{% url 'logout' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+
+<style>
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
@@ -48,7 +62,7 @@ a:hover, a:active {
 
 <body style="background-color:#6495ED;">
     <center>
-        <h2>מערכת שעות</h2>
+         <p align="left">.</p>
 
         <table style="width:100%">
             <tr>
@@ -144,5 +158,8 @@ a:hover, a:active {
         </table>
         <button type="button" onclick="alert('השינויים נשמרו בהצלחה!')">!שמירת שינויים</button>
     </center>
+</div>
+
+</center>
 </body>
 {% endblock %}

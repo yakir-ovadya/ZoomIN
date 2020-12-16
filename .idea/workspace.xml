@@ -15,9 +15,6 @@
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="ProjectId" id="1ky9lKnJVqfDjkDsRJJlYJ6BpQD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -26,12 +23,22 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/projectfiles/zoomin/schedule" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Teacher" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Student" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Administrator" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates\" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule\schedule" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\account" />
       <recent name="C:\Users\Yak\Desktop\pythonProject5\projectfiles\zoomin" />
-      <recent name="C:\Users\Yak\Desktop\pythonProject5\projectfiles\zoomin\account" />
     </key>
   </component>
   <component name="RunManager">
@@ -68,17 +75,32 @@
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
+  <component name="WindowStateProjectService">
+    <state x="580" y="231" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607871883296">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="580" y="231" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1607871883296" />
+    <state x="725" y="292" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606733021836" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1607852314670">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1607852314670" />
+    <state x="277" y="57" key="SettingsEditor" timestamp="1607850955982">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1607850955982" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1608075149761">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1608075149761" />
+    <state x="673" y="89" width="585" height="801" key="find.popup" timestamp="1606732988905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="673" y="89" width="585" height="801" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606732988905" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1607944708590">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1607944708590" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
