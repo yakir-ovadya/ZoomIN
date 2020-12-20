@@ -13,17 +13,21 @@ class SignUpView(generic.CreateView):
     template_name = 'registration/signup.html'
 
 
+
 def grades(request):
-    return render(request,'grades.html')
+    return render(request, 'grades.html')
 
 def bulletin_board(request):
-    return render(request,'bulletin_board.html')
+    return render(request, 'bulletin_board.html')
 
 def calendar(request):
-    return render(request,'calendar.html')
+    return render(request, 'calendar.html')
 
 def presence(request):
-    return render(request,'presence.html')
+    return render(request, 'presence.html')
 
 def schedule(request):
-    return render(request,'schedule.html')
+    return render(request, 'schedule.html')
+
+def Username_Recovery(request):
+    return render(request, 'UsernameRecovery.html')
