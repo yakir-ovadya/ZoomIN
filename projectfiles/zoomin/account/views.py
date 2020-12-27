@@ -27,3 +27,6 @@ def presence(request):
 
 def schedule(request):
     return render(request,'schedule.html')
+
+def bulletin_board_class(request):
+    return render(request,'bulletin_board_class.html')

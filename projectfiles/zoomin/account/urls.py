@@ -1,7 +1,7 @@
     # accounts/urls.py
 from django.urls import path
 
-from .views import SignUpView,grades,bulletin_board,calendar,presence,schedule
+from .views import SignUpView,grades,bulletin_board,calendar,presence,schedule,bulletin_board_class
 
 
 urlpatterns = [
@@ -11,4 +11,5 @@ urlpatterns = [
     path('calendar/', calendar, name='calendar'),
     path('presence/', presence, name='presence'),
     path('schedule/', schedule, name='schedule'),
+    path('bulletinboardclass/',bulletin_board_class,name='bulletin_board_class'),
 ]

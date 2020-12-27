@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}מערכת שעות{% endblock %}
 
 {% block content %}
 
@@ -31,13 +31,14 @@ a:hover, a:active {
 <center>
   <h2>מערכת שעות</h2>
 <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="{% url 'grades' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-  <a href="{% url 'calendar' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
-  <a href="{% url 'schedule' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">לוח מודעות</a>
-  <a href="{% url 'logout' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+  <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
+  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
+  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות בית ספרית</a>
+  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות כיתית</a>
+  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 
 <style>
         table, th, td {
