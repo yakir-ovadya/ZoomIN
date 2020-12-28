@@ -31,3 +31,6 @@ def schedule(request):
 
 def Username_Recovery(request):
     return render(request, 'UsernameRecovery.html')
+
+def bulletin_board_class(request):
+    return render(request,'bulletin_board_class.html')
