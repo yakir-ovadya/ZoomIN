@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e74be2-b205-4170-bf47-f9cb34a2c5cb" name="Default Changelist" comment="" />
+    <list default="true" id="61e74be2-b205-4170-bf47-f9cb34a2c5cb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_board.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board_class.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board_class.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/grades.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/grades.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/presence.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/presence.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/schedule.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +48,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ky9lKnJVqfDjkDsRJJlYJ6BpQD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -23,22 +59,23 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/projectfiles/zoomin/schedule" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/projectfiles/zoomin/templates" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule" />
-      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Teacher" />
-      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Student" />
-      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Administrator" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates\" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule\schedule" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\account" />
       <recent name="C:\Users\Yak\Desktop\pythonProject5\projectfiles\zoomin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shter\Documents\GitHub\Hackathon2020Group17\projectfiles\zoomin\templates" />
+      <recent name="C:\Users\shter\Documents\GitHub\Hackathon2020Group17\projectfiles\zoomin\account" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Teacher" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Student" />
     </key>
   </component>
   <component name="RunManager">
@@ -74,6 +111,17 @@
       <updated>1606662113363</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="580" y="231" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607871883296">

@@ -8,7 +8,8 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
+
+
 
 
 <body style="background-color:#6495ED;">
@@ -23,12 +24,53 @@
   <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
   <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
   <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מודעות בית ספרית</a>
-  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות כיתית</a>
+  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מודעות - בית ספר</a>
+  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
   <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 
 </div>
-  <img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
+
+  {% if topics %}
+    <table class="w3-table-all">
+      <thead>
+        <tr class="w3-teal">
+
+          <th>נושא</th>
+          <th>תיאור</th>
+          <th>תאריך</th>
+          <th>לערוך</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for board_school in topics  %}
+          <tr>
+
+            <th>{{ board_school.topic }}</th>
+            <th>{{ board_school.description }}</th>
+            <th>{{ board_school.publication_date }}</th>
+            <th>
+              <a href="{% url 'editBoardSchool' board_school.id %}"  class="w3-button w3-teal">לערוך</a>
+              <a href="{% url 'deleteBoardSchool' board_school.id %}"  class="w3-button w3-teal">למחוק</a>
+            </th>
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  {% else %}
+     <h1>לא קיימות הודעות</h1>
+  {% endif %}
+
+<div class="w3-bar">
+
+  <a href="{% url 'addBoardSchool' %}"  class="w3-button w3-teal">הוספת הודעה</a>
+
+
+
+</div>
+</div>
+
+
 </center>
 </body>
-{% endblock %}
+{% endblock content %}
