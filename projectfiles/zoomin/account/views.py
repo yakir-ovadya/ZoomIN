@@ -1,19 +1,65 @@
 # accounts/views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import authenticate, login
+from .forms import ExtendedUserCreationForm
+
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 from django.views import generic
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from .forms import board_schoolForm
+from .forms import board_schoolForm, UserProfileForm
 from .models import board_school
 
 
 
-class SignUpView(generic.CreateView):
+
+
+def index(request):
+    if request.user.is_authenticated:
+        username = request.user.username
+    else:
+        username = 'not logged in'
+
+    return render(request, 'templates/home.html')
+
+
+@login_required
+def profile(request):
+    return render(request,'home.html' )
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        profile_form = UserProfileForm(request.POST)
+
+        if form.is_valid() and profile_form.is_valid():
+            user = form.save()
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
+
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+        profile_form = UserProfileForm()
+
+    context = {'form' : form, 'profile_form': profile_form}
+    return render(request, 'registration/signup.html', context)
+
+
+
+
+
+"""class SignUpView(generic.CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy('login')
     template_name = 'registration/signup.html'
-
+"""
 
 
 def grades(request):
