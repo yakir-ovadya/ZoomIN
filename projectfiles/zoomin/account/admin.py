@@ -1,5 +1,5 @@
 from django.contrib import admin
-from account.models import board_school, board_class,UserProfile
+from .models import board_school, board_class, UserProfile
 # Register your models here.
 
 """

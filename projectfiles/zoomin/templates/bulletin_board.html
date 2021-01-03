@@ -38,7 +38,9 @@
           <th>נושא</th>
           <th>תיאור</th>
           <th>תאריך</th>
+          {% if user.username == 'Admin' %}
           <th>לערוך</th>
+          {% endif %}
         </tr>
       </thead>
       <tbody>
@@ -48,9 +50,12 @@
             <th>{{ board_school.topic }}</th>
             <th>{{ board_school.description }}</th>
             <th>{{ board_school.publication_date }}</th>
+
             <th>
-              <a href="{% url 'editBoardSchool' board_school.id %}"  class="w3-button w3-teal">לערוך</a>
-              <a href="{% url 'deleteBoardSchool' board_school.id %}"  class="w3-button w3-teal">למחוק</a>
+              {% if user.username == 'Admin' %}
+                <a href="{% url 'editBoardSchool' board_school.id %}"  class="w3-button w3-teal">לערוך</a>
+                <a href="{% url 'deleteBoardSchool' board_school.id %}"  class="w3-button w3-teal">למחוק</a>
+              {% endif %}
             </th>
           </tr>
         {% endfor %}
@@ -61,13 +66,13 @@
      <h1>לא קיימות הודעות</h1>
   {% endif %}
 
-<div class="w3-bar">
+<dwasiv class="w3-bar">
+  {% if user.username == 'Admin' %}
+    <a href="{% url 'addBoardSchool' %}"  class="w3-button w3-teal">הוספת הודעה</a>
+  {% endif %}
 
-  <a href="{% url 'addBoardSchool' %}"  class="w3-button w3-teal">הוספת הודעה</a>
 
-
-
-</div>
+</dwasiv>
 </div>
 
 
