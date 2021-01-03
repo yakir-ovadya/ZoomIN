@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}לוח מודעות{% endblock %}
+
+{% block content %}
+
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+
+
+<body style="background-color:#6495ED;">
+<center>
+  <h2>לוח מודעות</h2>
+  <h2>בית ספר</h2>
+
+
+<div class="w3-bar w3-border w3-light-black">
+  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+  <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
+  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מודעות - בית ספר</a>
+  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+
+</div>
+
+  {% if topics %}
+    <table class="w3-table-all">
+      <thead>
+        <tr class="w3-teal">
+
+          <th>נושא</th>
+          <th>תיאור</th>
+          <th>תאריך</th>
+          {% if user.username == 'Admin' %}
+          <th>לערוך</th>
+          {% endif %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for board_school in topics  %}
+          <tr>
+
+            <th>{{ board_school.topic }}</th>
+            <th>{{ board_school.description }}</th>
+            <th>{{ board_school.publication_date }}</th>
+
+            <th>
+              {% if user.username == 'Admin' %}
+                <a href="{% url 'editBoardSchool' board_school.id %}"  class="w3-button w3-teal">לערוך</a>
+                <a href="{% url 'deleteBoardSchool' board_school.id %}"  class="w3-button w3-teal">למחוק</a>
+              {% endif %}
+            </th>
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  {% else %}
+     <h1>לא קיימות הודעות</h1>
+  {% endif %}
+
+<dwasiv class="w3-bar">
+  {% if user.username == 'Admin' %}
+    <a href="{% url 'addBoardSchool' %}"  class="w3-button w3-teal">הוספת הודעה</a>
+  {% endif %}
+
+
+</dwasiv>
+</div>
+
+
+</center>
+</body>
+{% endblock content %}
