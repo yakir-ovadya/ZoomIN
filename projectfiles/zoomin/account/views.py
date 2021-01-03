@@ -2,8 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .forms import board_schoolForm, UserProfileForm,ExtendedUserCreationForm
-from .models import board_school
+from .forms import board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm
+from .models import board_school, board_class
 # from django.contrib.auth.forms import UserCreationForm
 # from .forms import ExtendedUserCreationForm
 # from django.urls import reverse_lazy
@@ -72,7 +72,8 @@ def Username_Recovery(request):
 
 
 def bulletin_board_class(request):
-    return render(request,'bulletin_board_class.html')
+    topics = board_class.objects.all()
+    return render(request,'bulletin_board_class.html',{'topics':topics})
 
 
 def bulletin_board(request):
@@ -90,6 +91,15 @@ def addBoardSchool(request):
         BoardSchool_form = board_schoolForm()
     return render(request,'add_bulletin_board.html',{'BoardSchool_form':BoardSchool_form})
 
+def addBoardClass(request):
+    if request.method == 'POST':
+        BoardClass_form = board_classForm(request.POST)
+        if BoardClass_form.is_valid():
+            BoardClass_form.save()
+            return redirect('bulletin_board_class')
+    else:
+        BoardClass_form = board_classForm()
+    return render(request,'add_bulletin_board_class.html',{'BoardClass_form':BoardClass_form})
 
 def editBoardSchool(request,id):
     topics = board_school.objects.get(id=id)
@@ -102,6 +112,22 @@ def editBoardSchool(request,id):
         return redirect('bulletin_board')
     return render(request, 'add_bulletin_board.html', {'BoardSchool_form': BoardSchool_form})
 
+def editBoardClass(request,id):
+    topics = board_class.objects.get(id=id)
+    if request.method == 'GET':
+        BoardClass_form = board_classForm(instance=topics)
+    else:
+        BoardClass_form = board_classForm(request.POST, instance=topics)
+        if BoardClass_form.is_valid():
+            BoardClass_form.save()
+        return redirect('bulletin_board_class')
+    return render(request, 'add_bulletin_board_class.html', {'BoardClass_form': BoardClass_form})
+
+
+def deleteBoardClass(request,id):
+    topics = board_class.objects.get(id=id)
+    topics.delete()
+    return redirect('bulletin_board_class')
 
 def deleteBoardSchool(request,id):
     topics = board_school.objects.get(id=id)

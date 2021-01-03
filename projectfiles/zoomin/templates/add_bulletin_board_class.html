@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}לוח מודעות{% endblock %}
+{% block title %}Add board Class{% endblock %}
 
 {% block content %}
 
@@ -8,13 +8,13 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
+
 
 
 <body style="background-color:#6495ED;">
 <center>
   <h2>לוח מודעות</h2>
-  <h2>כיתה</h2>
+  <h2>בית כיתה</h2>
 
 
 <div class="w3-bar w3-border w3-light-black">
@@ -29,52 +29,31 @@
 
 </div>
 
-  {% if topics %}
-    <table class="w3-table-all">
-      <thead>
-        <tr class="w3-teal">
+  <form method="post">
+    {% csrf_token %}
+    {{ BoardClass_form.as_p }}
+    <div class="w3-container">
 
-          <th>נושא</th>
-          <th>תיאור</th>
-          <th>תאריך</th>
-          {% if user.username == 'Admin' %}
-          <th>לערוך</th>
-          {% endif %}
-        </tr>
-      </thead>
-      <tbody>
-        {% for board_class in topics  %}
-          <tr>
+       <button type="submit"class="w3-button w3-teal">שמור</button>
 
-            <th>{{ board_class.topic }}</th>
-            <th>{{ board_class.description }}</th>
-            <th>{{ board_class.publication_date }}</th>
-
-            <th>
-              {% if user.username == 'Admin' %}
-                <a href="{% url 'editBoardClass' board_class.id %}"  class="w3-button w3-teal">לערוך</a>
-                <a href="{% url 'deleteBoardClass' board_class.id %}"  class="w3-button w3-teal">למחוק</a>
-              {% endif %}
-            </th>
-          </tr>
-        {% endfor %}
-      </tbody>
-
-    </table>
-  {% else %}
-     <h1>לא קיימות הודעות</h1>
-  {% endif %}
-
-<dwasiv class="w3-bar">
-  {% if user.username == 'Admin' %}
-    <a href="{% url 'addBoardClass' %}"  class="w3-button w3-teal">הוספת הודעה</a>
-  {% endif %}
+    </div>
 
 
-</dwasiv>
-</div>
+  </form>
+
 
 
 </center>
 </body>
-{% endblock content %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

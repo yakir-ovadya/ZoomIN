@@ -17,8 +17,8 @@ class UserProfile(models.Model):
 
 class board_school(models.Model):
     id = models.AutoField(primary_key=True)
-    topic = models.CharField('topic',max_length=100,null=False,blank=False)
-    description = models.TextField('Description', max_length=300,null=True,blank=True)
+    topic = models.CharField('topic',max_length=100, blank=False, null=False)
+    description = models.TextField('Description', max_length=300, blank=True , null=True)
     publication_date = models.DateField(default=date.today())
 
     class Meta:
