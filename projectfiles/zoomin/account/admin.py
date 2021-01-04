@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import board_school, board_class, UserProfile
+from .models import board_school, board_class, UserProfile, schedule_mod
 # Register your models here.
 
 """
@@ -12,3 +12,4 @@ admin.site.register(Course)
 admin.site.register(board_school)
 admin.site.register(board_class)
 admin.site.register(UserProfile)
+admin.site.register(schedule_mod)

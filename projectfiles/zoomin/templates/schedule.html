@@ -3,219 +3,100 @@
 {% block title %}מערכת שעות{% endblock %}
 
 {% block content %}
-<head> <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script></head>
 
 <html>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
-
- <style>
-     a:link, a:visited {
-         background-color: #B7E9F7;
-         color: black;
-         border: 1px solid black;
-         padding: 10px 60px;
-         text-align: center;
-         text-decoration: none;
-         display: inline-block;
-     }
-
-     a:hover, a:active {
-         background-color: #DBF3FA;
-         color: white;
-     }
-</style>
-
-<body style="background-color:#fffdd0;">
-<center>
-    <div title="Add to Calander" class="addeventatc">
-        הוסף תזכורת לשיעור
-        <span class="start">01/13/2021 08:00 AM</span>
-        <span class="end">01/13/2021 10:00 AM</span>
-        <span class="timezone">America/Los_Angeles</span>
-        <span class="title">Summary of the event</span>
-        <span class="description">Description of the event</span>
-        <span class="location">Location of the event</span>
-    </div>
-  <h2>מערכת שעות</h2>
-<div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:10%" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-  <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
-  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile ">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:15%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
-  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 
 <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
+    a:link, a:visited {
+        background-color: #B7E9F7;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
 
-        th, td {
-            padding: 5px;
-        }
-        input {
-            text-align: right;
-        }
-        td {
-            text-align: right;
-        }
-        th {
-            text-align: right;
-        }
-    </style>
-</head>
+    a:hover, a:active {
+        background-color: #DBF3FA;
+        color: white;
+    }
+</style>
 
-<body style="background-color:#DBF3FA;">
+
+<body style="background-color:#fffdd0;">
     <center>
-         <p align="left">.</p>
+        <h2>מערכת שעות</h2>
 
-        <table style="width:0%">
-            <tr>
-                <th>שישי</th>
-                <th>חמישי</th>
-                <th>רביעי</th>
-                <th>שלישי</th>
-                <th>שני</th>
-                <th>ראשון</th>
-                <th></th>
-            </tr>
-            <tr>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
-                </td>
-                <th>8:00</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>כשורי חיים</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
-                </td>
-                <th>9:00</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>כשורי חיים</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>עברית</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
-                </td>
-                <th>10:00</th>
-            </tr>
-            <tr>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>עברית</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
-                </td>
-                <th>11:00</th>
-            </tr>
-            <tr>
-                <td>
-                    <br />
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
-                </td>
-                <th>12:00</th>
-            </tr>
-            <tr>
-                <td>
-                    <br />
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>כשורי חיים</a>
-                </td>
-                <td>
-                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
-                </td>
-                <th>13:00</th>
-            </tr>
+
+
+        <div class="w3-bar w3-border w3-light-black">
+            <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
+            <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+            <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
+            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
+            <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3">לוח מודעות - בית ספר</a>
+            <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+            <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+
+        </div>
+
+        {% if topics %}
+        <table class="w3-table-all">
+            <thead>
+                <tr class="w3-teal">
+                    <th>שישי</th>
+                    <th>חמישי</th>
+                    <th>רביעי</th>
+                    <th>שלישי</th>
+                    <th>שני</th>
+                    <th>ראשון</th>
+                    <th>שעה</th>
+                    {% if user.username == 'Admin' %}
+                    <th>לערוך</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for schedule_mod in topics  %}
+                <tr>
+                    <th><a href='{{ schedule_mod.friday_link }}'>{{schedule_mod.friday}}</a></th>
+                    <th><a href='{{ schedule_mod.thursday_link }}'>{{schedule_mod.thursday}}</a></th>
+                    <th><a href='{{ schedule_mod.wednesday_link }}'>{{schedule_mod.wednesday}}</a></th>
+                    <th><a href='{{ schedule_mod.tuesday_link }}'>{{schedule_mod.tuesday}}</a></th>
+                    <th><a href='{{ schedule_mod.monday_link }}'>{{schedule_mod.monday}}</a></th>
+                    <th><a href='{{ schedule_mod.sunday_link }}'>{{schedule_mod.sunday}}</a></th>
+                    <th>{{ schedule_mod.time }}</th>
+                    <th>
+
+                        {% if user.username == 'Admin' %}
+                        <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-teal">עריכה</a>
+                        <a href="{% url 'deleteSchedule' schedule_mod.id %}" class="w3-button w3-teal">מחיקה</a>
+                        {% endif %}
+                    </th>
+                </tr>
+                {% endfor %}
+            </tbody>
+
         </table>
-        <button type="button" onclick="alert('השינויים נשמרו בהצלחה!')">!שמירת שינויים</button>
-    </center>
-</div>
+        {% else %}
+        <h1>לא קיימת מערכת עדין</h1>
+        {% endif %}
 
-</center>
+        <dwasiv class="w3-bar">
+            {% if user.username == 'Admin' %}
+            <a href="{% url 'addSchedule' %}" class="w3-button w3-teal">הוספת שעות למערכת</a>
+            {% endif %}
+
+
+        </dwasiv>
+        </div>
+
+
+    </center>
 </body>
-{% endblock %}
+{% endblock content %}

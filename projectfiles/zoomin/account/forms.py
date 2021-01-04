@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import board_class, board_school, UserProfile
+from .models import board_class, board_school, UserProfile, schedule_mod
 
 
 class ExtendedUserCreationForm(UserCreationForm):
@@ -25,7 +25,6 @@ class UserProfileForm(forms.ModelForm):
 
 
 
-
 class board_classForm(forms.ModelForm):
     class Meta:
         model = board_class
@@ -36,3 +35,10 @@ class board_schoolForm(forms.ModelForm):
     class Meta:
         model = board_school
         fields = ['topic', 'description','publication_date']
+
+
+class Schedule_Form(forms.ModelForm):
+    class Meta:
+        model = schedule_mod
+        fields = ['friday', 'friday_link', 'thursday', 'thursday_link', 'wednesday', 'wednesday_link',
+                  'tuesday', 'tuesday_link', 'monday', 'monday_link', 'sunday', 'sunday_link', 'time']
