@@ -11,9 +11,25 @@
 <body>
 
 
-<body style="background-color:#6495ED;">
+<body style="background-color:#fffdd0;">
 <center>
-  <h2>ציונים</h2>
+  <h2>ציונים</h2><style>
+    a:link, a:visited {
+        background-color: #B7E9F7;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: #DBF3FA;
+        color: white;
+    }
+</style>
+
 
   <div class="w3-bar w3-border w3-light-black">
   <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
@@ -28,7 +44,6 @@
 
 
 </div>
-  <img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
 </center>
 </body>
 {% endblock %}

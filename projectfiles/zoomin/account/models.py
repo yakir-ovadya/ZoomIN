@@ -1,42 +1,18 @@
 from django.db import models
-from datetime import datetime,date
-
+from django.contrib.auth.models import User
+from datetime import date
 
 # Create your models here.
-class Administrator(models.Model):
-    name = models.CharField(max_length = 20)
-    last_name = models.CharField(max_length = 20)
-    mail = models.CharField(max_length=20)
-    code_admin = models.CharField(max_length = 20)
-
-class Course(models.Model):
-    name = models.CharField(max_length=20)
-    code_course = models.CharField(max_length=20)
-
-class Teacher(models.Model):
-    name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    mail = models.CharField(max_length=20)
-    code_teacher = models.CharField(max_length=20)
-    admin = models.ForeignKey(Administrator,null=False,blank=False,on_delete=models.CASCADE)
+class UserProfile(models.Model):
+    user = models.OneToOneField(User,null=True,blank=True, on_delete=models.CASCADE)
+    First_Name = models.CharField(max_length=30,null=True,blank=True)
+    Last_Name = models.CharField(max_length=30,null=True,blank=True)
+    Code = models.CharField(max_length=30,null=True,blank=True)
+    ID_Number = models.CharField(max_length=30,null=True,blank=True)
 
 
-class Student(models.Model):
-    name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    mail = models.CharField(max_length=20)
-    teacher = models.ForeignKey(Teacher,null=False,blank=False,on_delete=models.CASCADE)
-    course = models.ManyToManyField(Course)
-
-    def nameStudent(self):
-        txt = "{0} {1}"
-        return txt.format(self.name,self.last_name)
-
-class Parent(models.Model):
-    name = models.CharField(max_length=20)
-    last_name = models.CharField(max_length=20)
-    mail = models.CharField(max_length=20)
-    student = models.ForeignKey(Student, null=False, blank=False, on_delete=models.CASCADE)
+    def __str__(self):
+        return str(self.user)
 
 
 class board_school(models.Model):
@@ -68,8 +44,3 @@ class board_class(models.Model):
 
     def __str__(self):
         return self.topic
-
-
-
-
-

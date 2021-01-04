@@ -12,23 +12,23 @@
 <body>
 
  <style>
-a:link, a:visited {
-  background-color: #3498DB;
-  color: black;
-  border: 2px solid black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-}
+     a:link, a:visited {
+         background-color: #B7E9F7;
+         color: black;
+         border: 1px solid black;
+         padding: 10px 60px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+     }
 
-a:hover, a:active {
-  background-color: #4cafa5;
-  color: white;
-}
+     a:hover, a:active {
+         background-color: #DBF3FA;
+         color: white;
+     }
 </style>
 
-<body style="background-color:#6495ED;">
+<body style="background-color:#fffdd0;">
 <center>
     <div title="Add to Calander" class="addeventatc">
         הוסף תזכורת לשיעור
@@ -41,12 +41,12 @@ a:hover, a:active {
     </div>
   <h2>מערכת שעות</h2>
 <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="{% url 'home' %}" style="width:10%" class="w3-bar-item w3-button w3-mobile">Home</a>
   <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
   <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
   <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
   <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile ">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+  <a href="{% url 'bulletin_board' %}" style="width:15%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
   <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
   <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 
@@ -71,11 +71,11 @@ a:hover, a:active {
     </style>
 </head>
 
-<body style="background-color:#6495ED;">
+<body style="background-color:#DBF3FA;">
     <center>
          <p align="left">.</p>
 
-        <table style="width:100%">
+        <table style="width:0%">
             <tr>
                 <th>שישי</th>
                 <th>חמישי</th>
@@ -86,85 +86,130 @@ a:hover, a:active {
                 <th></th>
             </tr>
             <tr>
-                <td><input type="text" id="sunday8" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday8" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday8" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday8" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday8" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday8" value="הוסף שיעור" /></td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
+                </td>
                 <th>8:00</th>
             </tr>
             <tr>
-                <td><input type="text" id="sunday9" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday9" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday9" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday9" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday9" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday9" value="הוסף שיעור" /></td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>כשורי חיים</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>תורה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
+                </td>
                 <th>9:00</th>
             </tr>
             <tr>
-                <td><input type="text" id="sunday10" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday10" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday10" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday10" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday10" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday10" value="הוסף שיעור" /></td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>כשורי חיים</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>עברית</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
+                </td>
                 <th>10:00</th>
             </tr>
             <tr>
-                <td><input type="text" id="sunday11" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday11" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday11" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday11" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday11" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday11" value="הוסף שיעור" /></td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>חשבון</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>הנדסה</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>עברית</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>אנגלית</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
+                </td>
                 <th>11:00</th>
             </tr>
             <tr>
-                <td><input type="text" id="sunday12" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday12" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday12" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday12" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday12" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday12" value="הוסף שיעור" /></td>
+                <td>
+                    <br />
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
+                </td>
                 <th>12:00</th>
             </tr>
             <tr>
-                <td><input type="text" id="sunday13" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday13" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday13" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday13" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday13" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday13" value="הוסף שיעור" /></td>
+                <td>
+                    <br />
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>ספורט</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>לשון</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>כשורי חיים</a>
+                </td>
+                <td>
+                    <a href='https://zoom.us/j/98841444807?pwd=S1RhQVp6NHJpYkNTWTVHUEpXb0dsUT09'>מדעים</a>
+                </td>
                 <th>13:00</th>
-            </tr>
-            <tr>
-                <td><input type="text" id="sunday14" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday14" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday14" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday14" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday14" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday14" value="הוסף שיעור" /></td>
-                <th>14:00</th>
-            </tr>
-            <tr>
-                <td><input type="text" id="sunday15" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday15" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday15" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday15" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday15" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday15" value="הוסף שיעור" /></td>
-                <th>15:00</th>
-            </tr>
-            <tr>
-                <td><input type="text" id="sunday16" value="הוסף שיעור" /></td>
-                <td><input type="text" id="monday16" value="הוסף שיעור" /></td>
-                <td><input type="text" id="tuesday16" value="הוסף שיעור" /></td>
-                <td><input type="text" id="wensday16" value="הוסף שיעור" /></td>
-                <td><input type="text" id="thursday16" value="הוסף שיעור" /></td>
-                <td><input type="text" id="friday16" value="הוסף שיעור" /></td>
-                <th>16:00</th>
             </tr>
         </table>
         <button type="button" onclick="alert('השינויים נשמרו בהצלחה!')">!שמירת שינויים</button>
