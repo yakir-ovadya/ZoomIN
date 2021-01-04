@@ -21,13 +21,29 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <body>
 
-<body style="background-color:#6495ED;">
+<body style="background-color:#fffdd0;">
 <center>
 
 {% if user.is_authenticated %}
   <h2>Home</h2>
   Hi {{ user.username }}!
 
+  <style>
+    a:link, a:visited {
+        background-color: #B7E9F7;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: #DBF3FA;
+        color: white;
+    }
+</style>
   <div class="w3-bar w3-border w3-light-black">
   <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">Home</a>
   <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
