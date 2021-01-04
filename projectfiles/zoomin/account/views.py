@@ -2,8 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .forms import board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm
-from .models import board_school, board_class
+from .forms import Schedule_Form, board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm
+from .models import schedule_mod, board_school, board_class
 # from django.contrib.auth.forms import UserCreationForm
 # from .forms import ExtendedUserCreationForm
 # from django.urls import reverse_lazy
@@ -64,7 +64,8 @@ def presence(request):
 
 
 def schedule(request):
-    return render(request, 'schedule.html')
+    topics = schedule_mod.objects.all()
+    return render(request, 'schedule.html', {'topics': topics})
 
 
 def Username_Recovery(request):
@@ -101,6 +102,7 @@ def addBoardClass(request):
         BoardClass_form = board_classForm()
     return render(request,'add_bulletin_board_class.html',{'BoardClass_form':BoardClass_form})
 
+
 def editBoardSchool(request,id):
     topics = board_school.objects.get(id=id)
     if request.method == 'GET':
@@ -123,7 +125,6 @@ def editBoardClass(request,id):
         return redirect('bulletin_board_class')
     return render(request, 'add_bulletin_board_class.html', {'BoardClass_form': BoardClass_form})
 
-
 def deleteBoardClass(request,id):
     topics = board_class.objects.get(id=id)
     topics.delete()
@@ -133,3 +134,31 @@ def deleteBoardSchool(request,id):
     topics = board_school.objects.get(id=id)
     topics.delete()
     return redirect('bulletin_board')
+
+def addSchedule(request):
+    if request.method == 'POST':
+        schedule_form = Schedule_Form(request.POST)
+        if schedule_form.is_valid():
+            schedule_form.save()
+            return redirect('schedule')
+    else:
+            schedule_form = Schedule_Form()
+    return render(request, 'addschedule.html', {'schedule_form': schedule_form})
+
+
+def editSchedule(request, id):
+    topics = schedule_mod.objects.get(id=id)
+    if request.method == 'GET':
+        schedule_f = Schedule_Form(instance=topics)
+    else:
+        schedule_f = Schedule_Form(request.POST, instance=topics)
+        if schedule_f.is_valid():
+            schedule_f.save()
+        return redirect('schedule')
+    return render(request, 'addschedule.html', {'schedule_f': schedule_f})
+
+
+def deleteSchedule(request,id):
+    topics = schedule_mod.objects.get(id=id)
+    topics.delete()
+    return redirect('schedule')
