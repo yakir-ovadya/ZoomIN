@@ -26,6 +26,9 @@
 
 {% if user.is_authenticated %}
   <h2>Home</h2>
+    <form action="{% url 'search_results' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+</form>
   Hi {{ user.username }}!
 
 
@@ -89,6 +92,7 @@
   </ul>
 </nav>
 <br>
+
 
 
 

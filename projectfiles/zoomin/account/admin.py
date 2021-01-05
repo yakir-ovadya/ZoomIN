@@ -9,8 +9,13 @@ admin.site.register(Student)
 admin.site.register(Parent)
 admin.site.register(Course)
 """
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ("user","First_Name","Last_Name","Code","ID_Number",)
+
+admin.site.register(UserProfile, ProfileAdmin)
+
 admin.site.register(board_school)
 admin.site.register(board_class)
-admin.site.register(UserProfile)
+
 admin.site.register(schedule_mod)
 admin.site.register(Test_Schedule)

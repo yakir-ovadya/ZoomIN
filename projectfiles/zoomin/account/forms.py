@@ -47,3 +47,6 @@ class Test_ScheduleCheck(forms.ModelForm):
     class Meta:
         model = Test_Schedule
         fields = ['profession', 'date','start_time', 'end_time']
+
+class SearchForm(forms.Form):
+    q = forms.CharField(label='Search', max_length=50)

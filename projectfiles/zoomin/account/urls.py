@@ -3,7 +3,7 @@ from django.urls import path
 
 from .views import schedule, register, grades, bulletin_board, bulletin_Schedule, presence, schedule, Username_Recovery, \
     bulletin_board_class, addBoardSchool, editBoardSchool, deleteBoardSchool,addBoardClass,editBoardClass,deleteBoardClass,\
-    addSchedule, editSchedule, deleteSchedule, addTest, deleteTest, editTest
+    addSchedule, editSchedule, deleteSchedule, addTest, deleteTest, editTest, SearchResultsView, editSearch, deleteSearch
 urlpatterns = [
     path('signup', register, name='signup'),
     path('grades', grades, name='grades'),
@@ -26,6 +26,10 @@ urlpatterns = [
     path('bulletin_Schedule/addbulletintest', addTest, name='addTest'),
     path('bulletin_Schedule/editTest/<int:id>', editTest, name='editTest'),
     path('bulletin_Schedule/deleteTest/<int:id>', deleteTest, name='deleteTest'),
+
+    path('search/', SearchResultsView.as_view(), name='search_results'),
+    path('search/editSearch/<int:id>', editSearch, name='editSearch'),
+    path('search/deleteSearch/<int:id>', deleteSearch, name='deleteSearch'),
 
 
 

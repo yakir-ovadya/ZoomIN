@@ -4,12 +4,15 @@ from datetime import date
 
 # Create your models here.
 class UserProfile(models.Model):
-    user = models.OneToOneField(User,null=True,blank=True, on_delete=models.CASCADE)
-    First_Name = models.CharField(max_length=30,null=True,blank=True)
-    Last_Name = models.CharField(max_length=30,null=True,blank=True)
-    Code = models.CharField(max_length=30,null=True,blank=True)
-    ID_Number = models.CharField(max_length=30,null=True,blank=True)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
+    First_Name = models.CharField('שם פרטי', max_length=30, null=True, blank=True)
+    Last_Name = models.CharField('שם משפחה', max_length=30, null=True, blank=True)
+    Code = models.CharField('קוד הרשאה', max_length=30, null=True, blank=True)
+    ID_Number = models.CharField('תעודת זהות', max_length=30, null=True, blank=True)
 
+    class Meta:
+        verbose_name_plural = "userprofile"
 
     def __str__(self):
         return str(self.user)
