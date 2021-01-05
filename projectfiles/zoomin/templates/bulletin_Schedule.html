@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}מערכת שעות{% endblock %}
+{% block title %}לוח מבחנים{% endblock %}
 
 {% block content %}
 
@@ -29,53 +29,47 @@
 
 <body style="background-color:#fffdd0;">
     <center>
-        <h2>מערכת שעות</h2>
+        <h2>לוח מבחנים</h2>
 
 
 
         <div class="w3-bar w3-border w3-light-black">
             <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
             <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
+            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מבחנים</a>
+            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
             <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3">לוח מודעות - בית ספר</a>
+            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
             <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
             <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
 
         </div>
 
-        {% if topics %}
-        <table class="w3-table-all">
+        {% if professions %}
+        <table class="w3-table-all w3-card-4">
             <thead>
                 <tr class="w3-teal">
-                    <th>שישי</th>
-                    <th>חמישי</th>
-                    <th>רביעי</th>
-                    <th>שלישי</th>
-                    <th>שני</th>
-                    <th>ראשון</th>
-                    <th>שעה</th>
+
+                    <th>שם המקצוע</th>
+                    <th>תאריך</th>
+                    <th>שעות התחלה</th>
+                    <th>שעות סיום</th>
                     {% if user.username == 'Admin' %}
                     <th>לערוך</th>
                     {% endif %}
                 </tr>
             </thead>
             <tbody>
-                {% for schedule_mod in topics  %}
+                {% for Test_Schedule in professions  %}
                 <tr>
-                    <th><a href='{{ schedule_mod.friday_link }}'>{{schedule_mod.friday}}</a></th>
-                    <th><a href='{{ schedule_mod.thursday_link }}'>{{schedule_mod.thursday}}</a></th>
-                    <th><a href='{{ schedule_mod.wednesday_link }}'>{{schedule_mod.wednesday}}</a></th>
-                    <th><a href='{{ schedule_mod.tuesday_link }}'>{{schedule_mod.tuesday}}</a></th>
-                    <th><a href='{{ schedule_mod.monday_link }}'>{{schedule_mod.monday}}</a></th>
-                    <th><a href='{{ schedule_mod.sunday_link }}'>{{schedule_mod.sunday}}</a></th>
-                    <th>{{ schedule_mod.time }}</th>
+                    <th>{{ Test_Schedule.profession }}</th>
+                    <th>{{ Test_Schedule.date }}</th>
+                    <th>{{ Test_Schedule.start_time }}</th>
+                    <th>{{ Test_Schedule.end_time }}</th>
                     <th>
-
                         {% if user.username == 'Admin' %}
-                        <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-teal">עריכה</a>
-                        <a href="{% url 'deleteSchedule' schedule_mod.id %}" class="w3-button w3-teal">מחיקה</a>
+                        <a href="{% url 'editTest' Test_Schedule.id %}" class="w3-button w3-teal">לערוך</a>
+                        <a href="{% url 'deleteTest' Test_Schedule.id %}" class="w3-button w3-teal">למחוק</a>
                         {% endif %}
                     </th>
                 </tr>
@@ -84,12 +78,12 @@
 
         </table>
         {% else %}
-        <h1>לא קיימת מערכת עדין</h1>
+        <h1>לא קיים מבחן</h1>
         {% endif %}
 
         <dwasiv class="w3-bar">
             {% if user.username == 'Admin' %}
-            <a href="{% url 'addSchedule' %}" class="w3-button w3-teal">הוספת שעות למערכת</a>
+            <a href="{% url 'addTest' %}" class="w3-button w3-teal">הוספת מבחן</a>
             {% endif %}
 
 
