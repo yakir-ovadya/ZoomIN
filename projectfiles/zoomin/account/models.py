@@ -70,3 +70,18 @@ class schedule_mod(models.Model):
 
     def __str__(self):
         return self.topics
+
+class Test_Schedule(models.Model):
+    id = models.AutoField(primary_key=True)
+    profession = models.CharField('מקצוע',max_length=100, blank=False, null=False)
+    date = models.DateField(default=date.today(), blank=True , null=True)
+    start_time = models.TimeField(auto_now=False, auto_now_add=False, null=True)
+    end_time = models.TimeField(auto_now=False, auto_now_add=False, null=True)
+    class Meta:
+        verbose_name = 'Test_Schedule'
+        verbose_name_plural = 'Test_Schedule'
+        ordering = ['date']
+
+
+    def __str__(self):
+        return self.profession

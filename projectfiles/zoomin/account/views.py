@@ -2,8 +2,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .forms import Schedule_Form, board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm
-from .models import schedule_mod, board_school, board_class
+from .forms import Schedule_Form, board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm, Test_ScheduleCheck
+from .models import schedule_mod, board_school, board_class, Test_Schedule
 # from django.contrib.auth.forms import UserCreationForm
 # from .forms import ExtendedUserCreationForm
 # from django.urls import reverse_lazy
@@ -162,3 +162,36 @@ def deleteSchedule(request,id):
     topics = schedule_mod.objects.get(id=id)
     topics.delete()
     return redirect('schedule')
+
+def bulletin_Schedule(request):
+    professions = Test_Schedule.objects.all()
+    return render(request, 'bulletin_Schedule.html',{'professions':professions})
+
+
+def addTest(request):
+    if request.method == 'POST':
+        TestSchedule_Form = Test_ScheduleCheck(request.POST)
+        if TestSchedule_Form.is_valid():
+            TestSchedule_Form.save()
+            return redirect('bulletin_Schedule')
+    else:
+        TestSchedule_Form = Test_ScheduleCheck()
+    return render(request,'add_bulletin_Schedule.html',{'TestSchedule_Form':TestSchedule_Form})
+
+
+def editTest(request,id):
+    professions = Test_Schedule.objects.get(id=id)
+    if request.method == 'GET':
+        TestSchedule_Form = Test_ScheduleCheck(instance=professions)
+    else:
+        TestSchedule_Form = Test_ScheduleCheck(request.POST, instance=professions)
+        if TestSchedule_Form.is_valid():
+            TestSchedule_Form.save()
+        return redirect('bulletin_Schedule')
+    return render(request, 'add_bulletin_Schedule.html', {'TestSchedule_Form': TestSchedule_Form})
+
+
+def deleteTest(request,id):
+    professions = Test_Schedule.objects.get(id=id)
+    professions.delete()
+    return redirect('bulletin_Schedule')

@@ -36,7 +36,7 @@
         <div class="w3-bar w3-border w3-light-black">
             <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
             <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-            <a href="{% url 'calendar' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח שנה</a>
+            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
             <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
             <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
             <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3">לוח מודעות - בית ספר</a>
@@ -46,8 +46,15 @@
         </div>
 
         {% if topics %}
-        <table class="w3-table-all">
-            <thead>
+            <br>
+            {% for schedule_mod in topics  %}
+            {% if user.userprofile.Code != '1234' %}
+                <table class="w3-border">
+            {% else %}
+                <table class="w3-table-all">
+            {% endif %}
+            {% endfor %}
+                <thead>
                 <tr class="w3-teal">
                     <th>שישי</th>
                     <th>חמישי</th>
@@ -56,14 +63,13 @@
                     <th>שני</th>
                     <th>ראשון</th>
                     <th>שעה</th>
-                    {% if user.username == 'Admin' %}
-                    <th>לערוך</th>
-                    {% endif %}
+
                 </tr>
             </thead>
             <tbody>
                 {% for schedule_mod in topics  %}
                 <tr>
+                    {% if user.userprofile.Code != '1234' %}
                     <th><a href='{{ schedule_mod.friday_link }}'>{{schedule_mod.friday}}</a></th>
                     <th><a href='{{ schedule_mod.thursday_link }}'>{{schedule_mod.thursday}}</a></th>
                     <th><a href='{{ schedule_mod.wednesday_link }}'>{{schedule_mod.wednesday}}</a></th>
@@ -71,11 +77,19 @@
                     <th><a href='{{ schedule_mod.monday_link }}'>{{schedule_mod.monday}}</a></th>
                     <th><a href='{{ schedule_mod.sunday_link }}'>{{schedule_mod.sunday}}</a></th>
                     <th>{{ schedule_mod.time }}</th>
+                    {% else %}
+                    <th>{{schedule_mod.friday}}</th>
+                    <th>{{schedule_mod.thursday}}</th>
+                    <th>{{schedule_mod.wednesday}}</th>
+                    <th>{{schedule_mod.tuesday}}</th>
+                    <th>{{schedule_mod.monday}}</th>
+                    <th>{{schedule_mod.sunday}}</th>
+                    <th>{{ schedule_mod.time }}</th>
+                    {% endif %}
                     <th>
-
                         {% if user.username == 'Admin' %}
-                        <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-teal">עריכה</a>
-                        <a href="{% url 'deleteSchedule' schedule_mod.id %}" class="w3-button w3-teal">מחיקה</a>
+                        <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-gray">עריכה</a>
+                        <a href="{% url 'deleteSchedule' schedule_mod.id %}" class="w3-button w3-gray">מחיקה</a>
                         {% endif %}
                     </th>
                 </tr>
@@ -89,7 +103,7 @@
 
         <dwasiv class="w3-bar">
             {% if user.username == 'Admin' %}
-            <a href="{% url 'addSchedule' %}" class="w3-button w3-teal">הוספת שעות למערכת</a>
+            <a href="{% url 'addSchedule' %}" class="w3-button w3-gray">הוספת שעות למערכת</a>
             {% endif %}
 
 

@@ -1,14 +1,14 @@
 # accounts/urls.py
 from django.urls import path
 
-from .views import schedule, register, grades, bulletin_board, calendar, presence, schedule, Username_Recovery, \
+from .views import schedule, register, grades, bulletin_board, bulletin_Schedule, presence, schedule, Username_Recovery, \
     bulletin_board_class, addBoardSchool, editBoardSchool, deleteBoardSchool,addBoardClass,editBoardClass,deleteBoardClass,\
-    addSchedule, editSchedule, deleteSchedule
+    addSchedule, editSchedule, deleteSchedule, addTest, deleteTest, editTest
 urlpatterns = [
     path('signup', register, name='signup'),
     path('grades', grades, name='grades'),
     path('bulletinboard', bulletin_board, name='bulletin_board'),
-    path('calendar', calendar, name='calendar'),
+    path('bulletin_Schedule', bulletin_Schedule, name='bulletin_Schedule'),
     path('presence', presence, name='presence'),
     path('usernamerecovery/', Username_Recovery, name='usernamerecovery'),
     path('schedule', schedule, name='schedule'),
@@ -22,6 +22,13 @@ urlpatterns = [
     path('bulletinboard/addbulletinboardClass', addBoardClass, name='addBoardClass'),
     path('bulletinboard/editBoardClass/<int:id>', editBoardClass, name='editBoardClass'),
     path('bulletinboard/deleteBoardClass/<int:id>', deleteBoardClass, name='deleteBoardClass'),
+
+    path('bulletin_Schedule/addbulletintest', addTest, name='addTest'),
+    path('bulletin_Schedule/editTest/<int:id>', editTest, name='editTest'),
+    path('bulletin_Schedule/deleteTest/<int:id>', deleteTest, name='deleteTest'),
+
+
+
 ]
 
 
