@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}לוח מבחנים{% endblock %}
+
+{% block content %}
+
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    a:link, a:visited {
+        background-color: #B7E9F7;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: #DBF3FA;
+        color: white;
+    }
+</style>
+
+
+<body style="background-color:#fffdd0;">
+    <center>
+        <h2>לוח מבחנים</h2>
+
+
+
+        <div class="w3-bar w3-border w3-light-black">
+            <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
+            <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מבחנים</a>
+            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+            <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+            <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+            <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+
+        </div>
+
+        {% if professions %}
+        <table class="w3-table-all w3-card-4">
+            <thead>
+                <tr class="w3-teal">
+
+                    <th>שם המקצוע</th>
+                    <th>תאריך</th>
+                    <th>שעות התחלה</th>
+                    <th>שעות סיום</th>
+                    {% if user.username == 'Admin' %}
+                    <th>לערוך</th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for Test_Schedule in professions  %}
+                <tr>
+                    <th>{{ Test_Schedule.profession }}</th>
+                    <th>{{ Test_Schedule.date }}</th>
+                    <th>{{ Test_Schedule.start_time }}</th>
+                    <th>{{ Test_Schedule.end_time }}</th>
+                    <th>
+                        {% if user.username == 'Admin' %}
+                        <a href="{% url 'editTest' Test_Schedule.id %}" class="w3-button w3-teal">לערוך</a>
+                        <a href="{% url 'deleteTest' Test_Schedule.id %}" class="w3-button w3-teal">למחוק</a>
+                        {% endif %}
+                    </th>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        {% else %}
+        <h1>לא קיים מבחן</h1>
+        {% endif %}
+
+        <dwasiv class="w3-bar">
+            {% if user.username == 'Admin' %}
+            <a href="{% url 'addTest' %}" class="w3-button w3-teal">הוספת מבחן</a>
+            {% endif %}
+
+
+        </dwasiv>
+        </div>
+
+
+    </center>
+</body>
+{% endblock content %}

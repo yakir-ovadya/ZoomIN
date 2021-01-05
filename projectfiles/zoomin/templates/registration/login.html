@@ -5,7 +5,7 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<body style="background-color:#6495ED;">
+<body style="background-color:#fffdd0;">
 <center>
   <h2>:התחברות לאתר</h2>
 <form method="post">
@@ -14,7 +14,7 @@
   <button type="submit">התחבר</button>
   <h3>?שכחת את שם המשתמש</h3>
   <P>:לשחזור שם המשתמש לחץ</P>
-  <button type="submit"><a href="/UsernameRecovery" >כאן</a></button>
+  <button type="submit"><a href="{% url 'usernamerecovery' %}" >כאן</a></button>
 </form>
   <img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
 </center>
