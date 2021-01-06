@@ -10,12 +10,14 @@ class UserProfile(models.Model):
     Last_Name = models.CharField('שם משפחה', max_length=30, null=True, blank=True)
     Code = models.CharField('קוד הרשאה', max_length=30, null=True, blank=True)
     ID_Number = models.CharField('תעודת זהות', max_length=30, null=True, blank=True)
-
+    in_class_op = (('נוכח', "נוכח"), ('לא נוכח', "לא נוכח"))
+    in_class = models.CharField('סטטוס', choices=in_class_op, default='לא נוכח', max_length=300, null=True)
     class Meta:
         verbose_name_plural = "userprofile"
 
     def __str__(self):
         return str(self.user)
+
 
 
 class board_school(models.Model):
@@ -88,3 +90,23 @@ class Test_Schedule(models.Model):
 
     def __str__(self):
         return self.profession
+
+
+class Presence_mod(models.Model):
+    id = models.AutoField(primary_key=True)
+    First_Name = models.CharField("שם פרטי", max_length=30, null=True, blank=True)
+    Last_Name = models.CharField("שם משפחה", max_length=30, null=True, blank=True)
+    exist = models.BooleanField("נוכח", default=False)
+    not_exist = models.BooleanField("לא נוכח", default=False)
+    date = models.DateField("תאריך", default=date.today(), blank=True , null=True)
+    profession = models.CharField("מקצוע", max_length=30, null=True, blank=True)
+    hour = models.TimeField("שעה", auto_now=False, auto_now_add=False, null=True)
+    val = [First_Name, Last_Name, exist, not_exist, date, profession, hour]
+
+    class Meta:
+        verbose_name = 'presence'
+        verbose_name_plural = 'presence'
+
+    def __str__(self):
+        return self.val
+

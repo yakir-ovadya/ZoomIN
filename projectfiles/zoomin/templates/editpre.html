@@ -75,38 +75,27 @@
 
       <body style="background-color:#DBF3FA;">
 
-              <p align="left">.</p>
+<body style="background-color:#6495ED;  " dir="rtl">
+
+<center>
+  <h2>מנהלה</h2>
+  <h2>עריכת סטטוס:</h2>
+
+  <form method="post">
+    {% csrf_token %}
+    {{ user_edit_s.as_p }}
+
+    <div class="w3-container">
+
+       <button type="submit"class="w3-button w3-teal">שמור</button>
+
+    </div>
 
 
-               <table class="w3-border">
-            <thead>
-                <tr class="w3-teal">
-                  <th><center>סטטוס:</center></th>
-                  <th><center>שם משפחה:</center></th>
-                  <th><center>שם פרטי:</center></th>
-                    {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
-                  <th><center>אפשרויות:</center></th>
-                    {% endif %}
-                </tr>
-            </thead>
-            <tbody>
-                {% for i in object_list %}
-                {% if not i.Code == '251' %}
-                <tr>
-                  <th><center>{{ i.in_class }}</center></th>
-                  <th><center>{{ i.Last_Name }}</center></th>
-                  <th><center>{{ i.First_Name }}</center></th>
-                  {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
-                  <th><center><a href="{% url 'editpre' i.id %}" class="w3-button w3-teal">עריכת משתמש</a></center></th>
-                  {% endif %}
-                </tr>
-                {% endif %}
-                {% endfor %}
-            </tbody>
+  </form>
 
-        </table>
-    </center>
+
+
+</center>
 </body>
-</html>
 {% endblock %}
-

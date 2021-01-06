@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import board_class, board_school, UserProfile, schedule_mod, Test_Schedule
+from .models import board_class, board_school, UserProfile, schedule_mod, Test_Schedule, Presence_mod
 
 
 class ExtendedUserCreationForm(UserCreationForm):
@@ -22,7 +22,6 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('First_Name', 'Last_Name', 'Code', 'ID_Number')
-
 
 
 class board_classForm(forms.ModelForm):
@@ -50,3 +49,15 @@ class Test_ScheduleCheck(forms.ModelForm):
 
 class SearchForm(forms.Form):
     q = forms.CharField(label='Search', max_length=50)
+
+
+class Presence_form(forms.ModelForm):
+    class Meta:
+        model = Presence_mod
+        fields = {'First_Name':'a', 'Last_Name':'a', 'exist':None, 'not_exist':None, 'date':None, 'hour':'a', 'profession':'a'}
+
+
+class UserProfile_in_class(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('in_class',)
