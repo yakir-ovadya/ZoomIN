@@ -45,7 +45,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
@@ -111,17 +111,20 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2375" y="0" width="876" height="648" key="dock-window-1" timestamp="1609855251980">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="-916" y="-70" width="851" height="1022" key="dock-window-1" timestamp="1609926085731">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
     </state>
+    <state x="-916" y="-70" width="851" height="1022" key="dock-window-1/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609926085731" />
     <state x="2375" y="0" width="876" height="648" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855251980" />
-    <state x="1926" y="0" width="1135" height="769" key="dock-window-2" timestamp="1609855480164">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="-936" y="-70" width="952" height="1026" key="dock-window-2" timestamp="1609926387339">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
     </state>
+    <state x="-936" y="-70" width="952" height="1026" key="dock-window-2/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609926387339" />
     <state x="1926" y="0" width="1135" height="769" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855480164" />
-    <state x="1992" y="0" width="1135" height="769" key="dock-window-3" timestamp="1609855536317">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="-956" y="-70" width="882" height="1026" key="dock-window-3" timestamp="1609926697430">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
     </state>
+    <state x="-956" y="-70" width="882" height="1026" key="dock-window-3/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609926697430" />
     <state x="1992" y="0" width="1135" height="769" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855536317" />
     <state x="1920" y="0" width="1135" height="769" key="dock-window-4" timestamp="1609855603698">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -139,6 +142,10 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2164" y="0" width="1135" height="648" key="dock-window-7/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609856040825" />
+    <state x="-1777" y="160" width="672" height="678" key="search.everywhere.popup" timestamp="1609930505577">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
+    </state>
+    <state x="-1777" y="160" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609930505577" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

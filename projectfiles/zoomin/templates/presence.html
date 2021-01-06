@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}נוכחות{% endblock %}
 
 {% block content %}
 
@@ -8,6 +8,7 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 <body>
 
  <style>
@@ -25,19 +26,28 @@
          background-color: #DBF3FA;
          color: white;
      }
+     .w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    }
 </style>
 
 <body style="background-color:#fffdd0;">
 <center>
-<h2>דף נוכחות</h2>
+  <p class="w3-xxlarge font-effect-shadow-multiple">דף נוכחות</p>
+
+
 <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="{% url 'grades' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
+  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
   <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-  <a href="{% url 'schedule' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile w3-black">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">לוח מודעות</a>
-  <a href="{% url 'logout' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">נוכחות</a>
+  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות</a>
+  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+
+
+
 
   <style>
       table, th, td {
@@ -173,6 +183,7 @@
                   </table>
                   <button type="button" onclick="alert('השינויים נשמרו בהצלחה!')">!שמירת שינויים</button>
           </center>
+
 </div>
 
 </center>
