@@ -26,10 +26,12 @@
 <center>
 
 {% if user.is_authenticated %}
+  {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
   <p class="w3-xxlarge font-effect-shadow-multiple">Home</p>
     <form action="{% url 'search_results' %}" method="get">
   <input name="q" type="text" placeholder="Search...">
 </form>
+  {% endif %}
   Hi {{ user.username }}!
 
 

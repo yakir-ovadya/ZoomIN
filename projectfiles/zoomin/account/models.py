@@ -12,6 +12,15 @@ class UserProfile(models.Model):
     ID_Number = models.CharField('תעודת זהות', max_length=30, null=True, blank=True)
     in_class_op = (('נוכח', "נוכח"), ('לא נוכח', "לא נוכח"))
     in_class = models.CharField('סטטוס', choices=in_class_op, default='לא נוכח', max_length=300, null=True)
+
+    pro1 = models.CharField('חשבון',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+    pro2 = models.CharField('היסטוריה',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+    pro3 = models.CharField('תנ"ך',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+    pro4 = models.CharField('גאוגרפיה',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+    pro5 = models.CharField('לשון',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+    pro6 = models.CharField('ספרות',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+    pro7 = models.CharField('ספורט',max_length=30,default='לא ניתן ציון', null=True, blank=True)
+
     class Meta:
         verbose_name_plural = "userprofile"
 

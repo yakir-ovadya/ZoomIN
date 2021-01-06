@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from .forms import Schedule_Form, board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm,\
-    Test_ScheduleCheck, Presence_form, UserProfile_in_class
+    Test_ScheduleCheck, Presence_form, UserProfile_in_class, UserProfile_grades
 from .models import schedule_mod, board_school, board_class, Test_Schedule, UserProfile, Presence_mod
 # from django.contrib.auth.forms import UserCreationForm
 # from .forms import ExtendedUserCreationForm
@@ -261,3 +261,18 @@ def editpre(request, id):
             user_edit_s.save()
         return redirect('presence')
     return render(request, 'editpre.html', {'user_edit_s': user_edit_s})
+
+class show_grades(ListView):
+    model = UserProfile
+    template_name = 'grades.html'
+
+def gradesedit(request, id):
+    user_grade = UserProfile.objects.get(id=id)
+    if request.method == 'GET':
+        user_edit_grade = UserProfile_grades(instance=user_grade)
+    else:
+        user_edit_grade = UserProfile_grades(request.POST, instance=user_grade)
+        if user_edit_grade.is_valid():
+            user_edit_grade.save()
+        return redirect('grades')
+    return render(request, 'gradesedit.html', {'user_edit_grade': user_edit_grade})

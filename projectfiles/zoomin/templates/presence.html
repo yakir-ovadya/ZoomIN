@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<body style="background-color:#fffdd0;">
+<body style="background-color:#fffdd0;" dir="rtl">
  <style>
      a:link, a:visited {
          background-color: #B7E9F7;
@@ -73,6 +73,7 @@
   </style>
 
 
+
       <body style="background-color:#DBF3FA;">
 
               <p align="left">.</p>
@@ -81,9 +82,10 @@
                <table class="w3-border">
             <thead>
                 <tr class="w3-teal">
-                  <th><center>סטטוס:</center></th>
-                  <th><center>שם משפחה:</center></th>
                   <th><center>שם פרטי:</center></th>
+                  <th><center>שם משפחה:</center></th>
+
+                    <th><center>סטטוס:</center></th>
                     {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
                   <th><center>אפשרויות:</center></th>
                     {% endif %}
@@ -91,22 +93,30 @@
             </thead>
             <tbody>
                 {% for i in object_list %}
-                {% if not i.Code == '251' %}
+                {% if i.Code == '0' %}
                 <tr>
-                  <th><center>{{ i.in_class }}</center></th>
-                  <th><center>{{ i.Last_Name }}</center></th>
-                  <th><center>{{ i.First_Name }}</center></th>
+
+                    <th><center>{{ i.First_Name }}</center></th>
+                    <th><center>{{ i.Last_Name }}</center></th>
+                    <th><center>{{ i.in_class }}</center></th>
+
+
                   {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
-                  <th><center><a href="{% url 'editpre' i.id %}" class="w3-button w3-teal">עריכת משתמש</a></center></th>
+                  <th><center><a href="{% url 'editpre' i.id %}" class="w3-button w3-teal">עריכת סטטוס</a></center></th>
                   {% endif %}
                 </tr>
                 {% endif %}
                 {% endfor %}
+
             </tbody>
 
         </table>
-    </center>
+      </body>
+</div>
+</center>
+</body>
 </body>
 </html>
+
 {% endblock %}
 

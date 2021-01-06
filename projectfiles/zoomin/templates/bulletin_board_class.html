@@ -59,7 +59,7 @@
                         <th>נושא</th>
                         <th>תיאור</th>
                         <th>תאריך</th>
-                        {% if user.username == 'Admin' %}
+                        {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
                         <th>לערוך</th>
                         {% endif %}
                     </tr>
@@ -73,7 +73,7 @@
                         <th>{{ board_class.publication_date }}</th>
 
                         <th>
-                            {% if user.username == 'Admin' %}
+                            {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
                             <a href="{% url 'editBoardClass' board_class.id %}" class="w3-button w3-teal">לערוך</a>
                             <a href="{% url 'deleteBoardClass' board_class.id %}" class="w3-button w3-teal">למחוק</a>
                             {% endif %}

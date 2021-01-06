@@ -61,3 +61,9 @@ class UserProfile_in_class(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('in_class',)
+
+
+class UserProfile_grades(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('pro1','pro2','pro3','pro4','pro5','pro6','pro7',)
