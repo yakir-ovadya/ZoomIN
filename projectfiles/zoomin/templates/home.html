@@ -19,13 +19,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 <body>
 
 <body style="background-color:#fffdd0;">
 <center>
 
 {% if user.is_authenticated %}
-  <h2>Home</h2>
+  <p class="w3-xxlarge font-effect-shadow-multiple">Home</p>
+    <form action="{% url 'search_results' %}" method="get">
+  <input name="q" type="text" placeholder="Search...">
+</form>
   Hi {{ user.username }}!
 
 
@@ -38,11 +42,14 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-    }
+    }<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 
     a:hover, a:active {
         background-color: #DBF3FA;
         color: white;
+    }
+    .w3-lobster {
+    font-family: "Lobster", Sans-serif;
     }
 </style>
   <div class="w3-bar w3-border w3-light-black">
@@ -89,6 +96,7 @@
   </ul>
 </nav>
 <br>
+
 
 
 
