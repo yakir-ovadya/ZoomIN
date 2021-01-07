@@ -6,9 +6,9 @@
 {% block content %}
 
 <html>
-
 <title>W3.CSS</title>
 <title>Bootstrap Example</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -19,23 +19,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
-<body>
-
-<body style="background-color:#fffdd0;">
-<center>
-
-{% if user.is_authenticated %}
-  {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
-  <p class="w3-xxlarge font-effect-shadow-multiple">Home</p>
-    <form action="{% url 'search_results' %}" method="get">
-  <input name="q" type="text" placeholder="Search...">
-</form>
-  {% endif %}
-  Hi {{ user.username }}!
-
-
-  <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<style>
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
     a:link, a:visited {
         background-color: #B7E9F7;
         color: black;
@@ -44,36 +36,971 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-    }<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
+    }
 
     a:hover, a:active {
         background-color: #DBF3FA;
         color: white;
     }
-    .w3-lobster {
-    font-family: "Lobster", Sans-serif;
-    }
+
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: #B7E9F7;
+  text-align: center;
+}
+
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: black;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color: #ffffff;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+.days {
+  padding: 10px 0;
+  background: #eee;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: #777;
+}
+
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+  .weekdays li, .days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+  .weekdays li, .days li {width: 12.2%;}
+}
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: static;
+  top: 50%;
+  width: 3%;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 1.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/12 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display:  none;
+  transition: background-color 0.0s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1000s;
+  animation-name: fade;
+  animation-duration: 10000s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.9}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.9}
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.search {
+    font-size: 8px;
+    letter-spacing: 4px;
+    text-align: right;
+}
+
 </style>
-  <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">Home</a>
-  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-  <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
-  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+</head>
+<body>
+<body style="background-color:#fffdd0;">
+<center>
+{% if user.is_authenticated %}
+{% if user.username == 'Admin' or user.userprofile.Code == '251' %}
+  <div class="search">
+  <form action="{% url 'search_results' %}" method="get" style="margin:auto;max-width:300px" dir="rtl">
+  <input type="text" name="q" placeholder="חיפוש..">
+  <button type="submit"><i class="fa fa-search"></i></button>
+  </form>
+  </div>
+  <p class="w3-xxlarge font-effect-shadow-multiple" dir="rtl">ברוכים הבאים לעמוד הבית: ZoomIn</p>
+    {% endif %}
+  Hi {{ user.username }}!
+<div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">בית</a>
+</div>
 
+  <h3>לוח שנה</h3>
+<div class="slideshow-container">
 
+<div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      ינואר<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
 
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+  <a><li>31</li></a>
+</ul>
+</div>
+
+<div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      פבואר<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+</ul>
+</div>
+
+<div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      מרץ<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+<div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      אפריל<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+<div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      מאי<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      יוני<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      יולי<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      אוגוסט<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      ספטמבר<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      אוקטובר<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      נובמבר<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+</ul>
+</div>
+
+  <div class="mySlides fade">
+<div class="month">
+  <ul>
+    <li>
+      דצמבר<br>
+      <span style="font-size:18px">2021</span>
+    </li>
+  </ul>
+</div>
+
+<ul class="weekdays">
+  <li>ראשון</li>
+  <li>שני</li>
+  <li>שלישי</li>
+  <li>רביעי</li>
+  <li>חמישי</li>
+  <li>שישי</li>
+  <li>שבת</li>
+</ul>
+
+<ul class="days">
+  <a><li>1</li></a>
+  <a><li>2</li></a>
+  <a><li>3</li></a>
+  <a><li>4</li></a>
+  <a><li>5</li></a>
+  <a><li>6</li></a>
+  <a><li>7</li></a>
+  <a><li>8</li></a>
+  <a><li>9</li></a>
+  <a><li>10</li></a>
+  <a><li>11</li></a>
+  <a><li>12</li></a>
+  <a><li>13</li></a>
+  <a><li>14</li></a>
+  <a><li>15</li></a>
+  <a><li>16</li></a>
+  <a><li>17</li></a>
+  <a><li>18</li></a>
+  <a><li>19</li></a>
+  <a><li>20</li></a>
+  <a><li>21</li></a>
+  <a><li>22</li></a>
+  <a><li>23</li></a>
+  <a><li>24</li></a>
+  <a><li>25</li></a>
+  <a><li>26</li></a>
+  <a><li>27</li></a>
+  <a><li>28</li></a>
+  <a><li>29</li></a>
+  <a><li>30</li></a>
+  <a><li>31</li></a>
+</ul>
 </div>
 
 
 
-{% else %}
 
-  <h2>אתה לא מחובר</h2>
-  <h2>נא לבצע התחברות</h2>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+  <span class="dot" onclick="currentSlide(11)"></span>
+  <span class="dot" onclick="currentSlide(12)"></span>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+{% else %}
+<h1 style="font-size:110px;">ZoomIn</h1>
+  <h2>אינך מחובר/ת</h2>
+  <h4>נא בצע/י התחברות</h4>
 
 
 <nav class="navbar navbar-expand-sm bg-blue{% url 'password_reset' %} justify-content-center">
@@ -103,7 +1030,6 @@
 
 
 {% endif %}
-<img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
   </center>
 </body>
 {% endblock %}

@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% block title %}מערכת שעות{% endblock %}
 
 {% block content %}
@@ -9,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
+<script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
 
 <style>
     a:link, a:visited {
@@ -28,27 +28,37 @@
     .w3-lobster {
     font-family: "Lobster", Sans-serif;
     }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 </style>
 
-
 <body style="background-color:#fffdd0;">
-    <center>
+<center>
+  <div title="Add to Calendar" class="addeventatc">
+    Add to Calendar
+    <span class="start">01/21/2021 08:00 AM</span>
+    <span class="end">01/21/2021 10:00 AM</span>
+    <span class="timezone">America/Los_Angeles</span>
+    <span class="title">Summary of the event</span>
+    <span class="description">Description of the event</span>
+    <span class="location">Location of the event</span>
+</div>
         <p class="w3-xxlarge font-effect-shadow-multiple">מערכת שעות</p>
 
-
-
-        <div class="w3-bar w3-border w3-light-black">
-            <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
-            <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
-            <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3">לוח מודעות - בית ספר</a>
-            <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-            <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
-
-        </div>
-
+  <div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
         {% if topics %}
             <br>
             {% for schedule_mod in topics  %}
@@ -59,7 +69,7 @@
             {% endif %}
             {% endfor %}
                 <thead>
-                <tr class="w3-teal">
+                <tr class="w3-cyan">
                     <th>שישי</th>
                     <th>חמישי</th>
                     <th>רביעי</th>
@@ -74,7 +84,7 @@
                 {% for schedule_mod in topics  %}
                 <tr>
                     {% if user.userprofile.Code != '1234' %}
-                    <th><a href='{{ schedule_mod.friday_link }}'>{{schedule_mod.friday}}</a></th>
+                    <th><a class="w3-clear" href='{{ schedule_mod.friday_link }}'>{{schedule_mod.friday}}</a></th>
                     <th><a href='{{ schedule_mod.thursday_link }}'>{{schedule_mod.thursday}}</a></th>
                     <th><a href='{{ schedule_mod.wednesday_link }}'>{{schedule_mod.wednesday}}</a></th>
                     <th><a href='{{ schedule_mod.tuesday_link }}'>{{schedule_mod.tuesday}}</a></th>
@@ -89,7 +99,7 @@
                     <th>{{schedule_mod.monday}}</th>
                     <th>{{schedule_mod.sunday}}</th>
                     <th>{{ schedule_mod.time }}</th>
-                    {% endif %}
+                     {% endif %}
                     <th>
                         {% if user.username == 'Admin' %}
                         <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-gray">עריכה</a>
@@ -101,7 +111,23 @@
             </tbody>
 
         </table>
-        {% else %}
+ <script type="text/javascript">
+window.addeventasync = function(){
+    addeventatc.settings({
+        appleical  : {show:true, text:"Apple Calendar"},
+        google     : {show:true, text:"Google <em>(online)</em>"},
+        office365  : {show:true, text:"Office 365 <em>(online)</em>"},
+        outlook    : {show:true, text:"Outlook"},
+        outlookcom : {show:true, text:"Outlook.com <em>(online)</em>"},
+        yahoo      : {show:true, text:"Yahoo <em>(online)</em>"}
+    });
+};
+</script>
+
+
+
+
+       {% else %}
         <h1>לא קיימת מערכת עדין</h1>
         {% endif %}
 
