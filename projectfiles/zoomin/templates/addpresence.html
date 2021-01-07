@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}הוספת דף נוכחות{% endblock %}
+
+{% block content %}
+
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
+
+
+<body style="background-color:#fffdd0;" dir="rtl">
+<center>
+  <p class="w3-xxlarge font-effect-shadow-multiple">נוכחות</p>
+
+
+<style>
+    a:link, a:visited {
+        background-color: #B7E9F7;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: #DBF3FA;
+        color: white;
+    }
+     .w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+<div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
+</div>
+
+    <form method="post">
+    {% csrf_token %}
+    {{ presence_form.as_table }}
+    <div class="w3-container">
+
+   <form method="get">
+    {% csrf_token %}
+    {{ presence_f.as_p }}
+    <div class="w3-container">
+
+       <button type="submit"class="w3-button w3-cyan">שמור</button>
+
+    </div>
+
+
+  </form>
+
+
+
+</center>
+</body>
+{% endblock %}
+
+
+
+
+
+

@@ -2,14 +2,18 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .forms import Schedule_Form, board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm, Test_ScheduleCheck
-from .models import schedule_mod, board_school, board_class, Test_Schedule
+from .forms import Schedule_Form, board_schoolForm, UserProfileForm,ExtendedUserCreationForm, board_classForm,\
+    Test_ScheduleCheck, Presence_form, UserProfile_in_class, UserProfile_grades
+from .models import schedule_mod, board_school, board_class, Test_Schedule, UserProfile, Presence_mod
 # from django.contrib.auth.forms import UserCreationForm
 # from .forms import ExtendedUserCreationForm
 # from django.urls import reverse_lazy
 # from django.views import generic
 # from django.http import HttpResponse
 
+from django.views.generic import TemplateView, ListView
+from django.db.models import Q
+from .forms import SearchForm
 
 
 def index(request):
@@ -195,3 +199,80 @@ def deleteTest(request,id):
     professions = Test_Schedule.objects.get(id=id)
     professions.delete()
     return redirect('bulletin_Schedule')
+
+class SearchResultsView(ListView):
+    model = UserProfile
+    template_name = 'search_results.html'
+
+    def get_queryset(self): # new
+        query = self.request.GET.get('q')
+        object_list = UserProfile.objects.filter(Q(ID_Number__icontains=query))
+        return object_list
+
+def editSearch(request, id):
+    user_edit = UserProfile.objects.get(id=id)
+    if request.method == 'GET':
+        user_edit_f = UserProfileForm(instance=user_edit)
+    else:
+        user_edit_f = UserProfileForm(request.POST, instance=user_edit)
+        if user_edit_f.is_valid():
+            user_edit_f.save()
+        return redirect('home')
+    return render(request, 'edituser.html', {'user_edit_f': user_edit_f})
+
+
+def deleteSearch(self,id):
+    delete_user = UserProfile.objects.get(id=id)
+    delete_user.delete()
+    return redirect('home')
+
+def addpresence(request):
+    if request.method == 'POST':
+        presence_form = Presence_form(request.POST)
+        if presence_form.is_valid():
+            presence_form.save()
+            return redirect('presence')
+    else:
+        presence_form = Presence_form()
+    return render(request, 'addpresence.html', {'presence_form': presence_form})
+
+def editpresence(request, id):
+    topics = Presence_mod.objects.get(id=id)
+    if request.method == 'GET':
+        presence_f = Presence_form(instance=topics)
+    else:
+        presence_f = Presence_form(request.POST, instance=topics)
+        if presence_f.is_valid():
+            presence_f.save()
+        return redirect('presence')
+    return render(request, 'addpresence.html', {'presence_f': presence_f})
+
+class showthis(ListView):
+    model = UserProfile
+    template_name = 'presence.html'
+
+def editpre(request, id):
+    user_status = UserProfile.objects.get(id=id)
+    if request.method == 'GET':
+        user_edit_s = UserProfile_in_class(instance=user_status)
+    else:
+        user_edit_s = UserProfile_in_class(request.POST, instance=user_status)
+        if user_edit_s.is_valid():
+            user_edit_s.save()
+        return redirect('presence')
+    return render(request, 'editpre.html', {'user_edit_s': user_edit_s})
+
+class show_grades(ListView):
+    model = UserProfile
+    template_name = 'grades.html'
+
+def gradesedit(request, id):
+    user_grade = UserProfile.objects.get(id=id)
+    if request.method == 'GET':
+        user_edit_grade = UserProfile_grades(instance=user_grade)
+    else:
+        user_edit_grade = UserProfile_grades(request.POST, instance=user_grade)
+        if user_edit_grade.is_valid():
+            user_edit_grade.save()
+        return redirect('grades')
+    return render(request, 'gradesedit.html', {'user_edit_grade': user_edit_grade})

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Add schedule{% endblock %}
+{% block title %}מערכת שעות{% endblock %}
 
 {% block content %}
 
@@ -8,12 +8,13 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 
 
 <body style="background-color:#fffdd0;">
 <center>
-  <h2>מערכת שעות</h2>
+  <p class="w3-xxlarge font-effect-shadow-multiple">מערכת שעות</p>
+
 
 <style>
     a:link, a:visited {
@@ -30,31 +31,39 @@
         background-color: #DBF3FA;
         color: white;
     }
+     .w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 </style>
 
 <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-  <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3">לוח מודעות - בית ספר</a>
-  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
-
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
 </div>
-
-  <form method="post">
+  <div dir="rtl">
+    <form method="post">
     {% csrf_token %}
     {{ schedule_form.as_p }}
     <div class="w3-container">
 
    <form method="get">
     {% csrf_token %}
-    {{ schedule_f.as_p }}
+     {{ schedule_f.as_p }}
     <div class="w3-container">
 
-       <button type="submit"class="w3-button w3-teal">שמור</button>
+       <button type="submit" class="w3-button w3-gray">שמור</button>
 
     </div>
 
