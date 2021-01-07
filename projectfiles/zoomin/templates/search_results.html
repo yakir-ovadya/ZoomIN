@@ -38,7 +38,9 @@
     letter-spacing: 0px;
     text-align: right;
 }
-
+h3 {
+  background-color:  #ffffff80
+}
 </style>
 
 
@@ -83,12 +85,12 @@
                 {% for userprofile in object_list %}
                 <tr>
 
-                  <th><center>{{ userprofile.First_Name }}</center></th>
-                  <th><center>{{ userprofile.Last_Name }}</center></th>
-                  <th><center>{{ userprofile.Code }}</center></th>
-                  <th><center>{{ userprofile.ID_Number }}</center></th>
-                  <th><center>{{ userprofile.user.username }}</center></th>
-                  <th><center>{{ userprofile.user.email }}</center></th>
+                    <th><center><h3><b>{{ userprofile.First_Name }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.Last_Name }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.Code }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.ID_Number }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.user.username }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.user.email }}</b></h3></center></th>
 
 
 

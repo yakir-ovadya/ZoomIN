@@ -39,7 +39,7 @@
   background-size: 100% 100%;
 }
   table, th, td {
-          border: 1px solid black;
+          border: 2px solid black;
           border-collapse: collapse;
       }
 
@@ -58,6 +58,9 @@
       th {
           text-align: right;
       }
+      h3 {
+  background-color:  #ffffff80
+}
 </style>
 
 
@@ -104,15 +107,16 @@
                 {% for i in object_list %}
 
                 <tr>
+
                     {% if i.Code == '0' %}
-                    <th><center>{{ i.ID_Number }}</center></th>
-                    <th><center>{{ i.pro1 }}</center></th>
-                    <th><center>{{ i.pro2 }}</center></th>
-                    <th><center>{{ i.pro3 }}</center></th>
-                    <th><center>{{ i.pro4 }}</center></th>
-                    <th><center>{{ i.pro5 }}</center></th>
-                    <th><center>{{ i.pro6 }}</center></th>
-                    <th><center>{{ i.pro7 }}</center></th>
+                    <th><center><b><h3>{{ i.ID_Number }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro1 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro2 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro3 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro4 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro5 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro6 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro7 }}</b></h3></center></th>
                     {% if user.userprofile.Code == '251' or user.username == 'Admin' %}
                     <th><center><a href="{% url 'gradesedit' i.id %}" class="w3-button w3-gray">עריכת משתמש</a></center></th>
                     {% endif %}

@@ -58,7 +58,7 @@
 
   <style>
       table, th, td {
-          border: 1px solid black;
+          border: 2px solid black;
           border-collapse: collapse;
       }
 
@@ -77,6 +77,9 @@
       th {
           text-align: right;
       }
+      h3 {
+  background-color:  #ffffff80
+}
   </style>
 
 
@@ -103,9 +106,9 @@
                 {% if i.Code == '0' %}
                 <tr>
 
-                    <th><center>{{ i.First_Name }}</center></th>
-                    <th><center>{{ i.Last_Name }}</center></th>
-                    <th><center>{{ i.in_class }}</center></th>
+                    <th><center><h3><b>{{ i.First_Name }}</b></h3></center></th>
+                    <th><center><h3><b>{{ i.Last_Name }}</b></h3></center></th>
+                    <th><center><h3><b>{{ i.in_class }}</b></h3></center></th>
 
 
                   {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
