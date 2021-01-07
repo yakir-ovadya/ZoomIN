@@ -138,7 +138,7 @@ window.addeventasync = function(){
         {% endif %}
 
         <dwasiv class="w3-bar">
-            {% if user.username == 'Admin' %}
+            {% if user.userprofile.Code == '251' %}
             <a href="{% url 'addSchedule' %}" class="w3-button w3-gray">הוספת שעות למערכת</a>
             {% endif %}
 

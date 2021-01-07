@@ -31,6 +31,7 @@ div {
           <form method="post">
 
               {% csrf_token %}
+              <div style dir="rtl">
               <h3><b>{{ profile_form.as_table }}</b></h3><br><br>
               <div style dir="ltr">
              <h3><b>{{ form.as_table }}</b></h3>
