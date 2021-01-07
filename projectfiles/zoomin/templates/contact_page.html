@@ -42,14 +42,14 @@
 
 
 <center>
-  <p class="w3-xxlarge font-effect-shadow-multiple">דף נוכחות</p>
+  <p class="w3-xxlarge font-effect-shadow-multiple">דף קשר</p>
 
 
 <div class="w3-bar w3-border w3-light-black">
 <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
 <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
 <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
-<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">נוכחות</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
 <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
 <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
 <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
@@ -81,7 +81,11 @@
   background-color:  #ffffff80
 }
   </style>
-
+  <div class="search">
+  <form action="{% url 'search_results' %}" method="get" style="margin:auto;max-width:300px" dir="rtl">
+  <input type="text" name="q" placeholder="חיפוש..">
+  <button type="submit">חפש</button>
+  </form>
 
 
       <body style="background-color:#DBF3FA;">
@@ -94,28 +98,20 @@
                 <tr class="w3-cyan">
                   <th><center>שם פרטי:</center></th>
                   <th><center>שם משפחה:</center></th>
-
-                    <th><center>סטטוס:</center></th>
-                    {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
-                  <th><center>אפשרויות:</center></th>
-                    {% endif %}
+                    <th><center>מייל:</center></th>
+                    <th><center>תעודת זהות:</center></th>
                 </tr>
             </thead>
             <tbody>
                 {% for i in object_list %}
-                {% if i.Code == '0' %}
                 <tr>
 
                     <th><center><h3><b>{{ i.First_Name }}</b></h3></center></th>
                     <th><center><h3><b>{{ i.Last_Name }}</b></h3></center></th>
-                    <th><center><h3><b>{{ i.in_class }}</b></h3></center></th>
+                    <th><center><h3><b>{{ i.user.email }}</b></h3></center></th>
+                    <th><center><h3><b>{{ i.ID_Number }}</b></h3></center></th>
 
-
-                  {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
-                  <th><center><a href="{% url 'editpre' i.id %}" class="w3-button w3-gray">עריכת סטטוס</a></center></th>
-                  {% endif %}
                 </tr>
-                {% endif %}
                 {% endfor %}
 
             </tbody>

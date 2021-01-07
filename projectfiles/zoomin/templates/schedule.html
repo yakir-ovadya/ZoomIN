@@ -20,7 +20,10 @@
         text-decoration: none;
         display: inline-block;
     }
-
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
     a:hover, a:active {
         background-color: #DBF3FA;
         color: white;
@@ -33,6 +36,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+h3 {
+  background-color:  #ffffff80
 }
 </style>
 
@@ -77,7 +83,7 @@
                     <th>שני</th>
                     <th>ראשון</th>
                     <th>שעה</th>
-
+                    <th>אפשרויות</th>
                 </tr>
             </thead>
             <tbody>
@@ -90,7 +96,7 @@
                     <th><a href='{{ schedule_mod.tuesday_link }}'>{{schedule_mod.tuesday}}</a></th>
                     <th><a href='{{ schedule_mod.monday_link }}'>{{schedule_mod.monday}}</a></th>
                     <th><a href='{{ schedule_mod.sunday_link }}'>{{schedule_mod.sunday}}</a></th>
-                    <th>{{ schedule_mod.time }}</th>
+                    <th><h3><b>{{ schedule_mod.time }}</b></h3></th>
                     {% else %}
                     <th>{{schedule_mod.friday}}</th>
                     <th>{{schedule_mod.thursday}}</th>
@@ -98,7 +104,7 @@
                     <th>{{schedule_mod.tuesday}}</th>
                     <th>{{schedule_mod.monday}}</th>
                     <th>{{schedule_mod.sunday}}</th>
-                    <th>{{ schedule_mod.time }}</th>
+                    <th><h3><b>{{ schedule_mod.time }}</b></h3></th>
                      {% endif %}
                     <th>
                         {% if user.username == 'Admin' %}
@@ -132,7 +138,7 @@ window.addeventasync = function(){
         {% endif %}
 
         <dwasiv class="w3-bar">
-            {% if user.username == 'Admin' %}
+            {% if user.userprofile.Code == '251' %}
             <a href="{% url 'addSchedule' %}" class="w3-button w3-gray">הוספת שעות למערכת</a>
             {% endif %}
 

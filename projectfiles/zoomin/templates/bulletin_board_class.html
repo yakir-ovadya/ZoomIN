@@ -22,7 +22,10 @@
             text-decoration: none;
             display: inline-block;
         }
-
+        table, th, td {
+          border: 2px solid black;
+          border-collapse: collapse;
+        }
         a:hover, a:active {
             background-color: #DBF3FA;
             color: white;
@@ -35,6 +38,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+h3 {
+  background-color:  #ffffff80
 }
     </style>
 
@@ -72,9 +78,9 @@
                     {% for board_class in topics  %}
                     <tr>
 
-                        <th>{{ board_class.topic }}</th>
-                        <th>{{ board_class.description }}</th>
-                        <th>{{ board_class.publication_date }}</th>
+                        <th><h3><b>{{ board_class.topic }}</b></h3></th>
+                        <th><h3><b>{{ board_class.description }}</b></h3></th>
+                        <th><h3><b>{{ board_class.publication_date }}</b></h3></th>
 
                         <th>
                             {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
@@ -92,7 +98,7 @@
             {% endif %}
 
             <dwasiv class="w3-bar">
-                {% if user.username == 'Admin' %}
+                {% if user.userprofile.Code == '251' %}
                 <a href="{% url 'addBoardClass' %}" class="w3-button w3-gray">הוספת הודעה</a>
                 {% endif %}
 

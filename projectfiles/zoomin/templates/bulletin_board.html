@@ -20,7 +20,10 @@
         text-decoration: none;
         display: inline-block;
     }
-
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
     a:hover, a:active {
         background-color: #DBF3FA;
         color: white;
@@ -33,6 +36,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+h3 {
+  background-color:  #ffffff80
 }
 </style>
 
@@ -71,9 +77,9 @@
                 {% for board_school in topics  %}
                 <tr>
 
-                    <th>{{ board_school.topic }}</th>
-                    <th>{{ board_school.description }}</th>
-                    <th>{{ board_school.publication_date }}</th>
+                    <th><h3><b>{{ board_school.topic }}</b></h3></th>
+                    <th><h3><b>{{ board_school.description }}</b></h3></th>
+                    <th><h3><b>{{ board_school.publication_date }}</b></h3></th>
 
                     <th>
                         {% if user.username == 'Admin' %}

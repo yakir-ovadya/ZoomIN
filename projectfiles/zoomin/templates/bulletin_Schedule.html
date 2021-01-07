@@ -20,6 +20,10 @@
         text-decoration: none;
         display: inline-block;
     }
+    table, th, td {
+          border: 2px solid black;
+          border-collapse: collapse;
+      }
 
     a:hover, a:active {
         background-color: #DBF3FA;
@@ -33,6 +37,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+}
+h3 {
+  background-color:  #ffffff80
 }
 </style>
 
@@ -69,10 +76,10 @@
             <tbody>
                 {% for Test_Schedule in professions  %}
                 <tr>
-                    <th>{{ Test_Schedule.profession }}</th>
-                    <th>{{ Test_Schedule.date }}</th>
-                    <th>{{ Test_Schedule.start_time }}</th>
-                    <th>{{ Test_Schedule.end_time }}</th>
+                    <th><b><h3>{{ Test_Schedule.profession }}</b></h3></th>
+                    <th><b><h3>{{ Test_Schedule.date }}</b></h3></th>
+                    <th><b><h3>{{ Test_Schedule.start_time }}</b></h3></th>
+                    <th><b><h3>{{ Test_Schedule.end_time }}</b></h3></th>
                     <th>
                         {% if user.username == 'Admin' %}
                         <a href="{% url 'editTest' Test_Schedule.id %}" class="w3-button w3-gray">לערוך</a>
