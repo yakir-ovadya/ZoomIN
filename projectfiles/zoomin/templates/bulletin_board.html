@@ -20,7 +20,10 @@
         text-decoration: none;
         display: inline-block;
     }
-
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
     a:hover, a:active {
         background-color: #DBF3FA;
         color: white;
@@ -28,6 +31,15 @@
     .w3-lobster {
     font-family: "Lobster", Sans-serif;
     }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+h3 {
+  background-color:  #ffffff80
+}
 </style>
 
 
@@ -37,22 +49,21 @@
 
 
 
-        <div class="w3-bar w3-border w3-light-black">
-            <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
-            <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-            <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מודעות - בית ספר</a>
-            <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-            <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
-
-        </div>
+<div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
 
         {% if topics %}
-        <table class="w3-table-all">
+        <table class="w3-border" dir="rtl">
             <thead>
-                <tr class="w3-teal">
+                <tr class="w3-cyan">
 
                     <th>נושא</th>
                     <th>תיאור</th>
@@ -66,14 +77,14 @@
                 {% for board_school in topics  %}
                 <tr>
 
-                    <th>{{ board_school.topic }}</th>
-                    <th>{{ board_school.description }}</th>
-                    <th>{{ board_school.publication_date }}</th>
+                    <th><h3><b>{{ board_school.topic }}</b></h3></th>
+                    <th><h3><b>{{ board_school.description }}</b></h3></th>
+                    <th><h3><b>{{ board_school.publication_date }}</b></h3></th>
 
                     <th>
                         {% if user.username == 'Admin' %}
-                        <a href="{% url 'editBoardSchool' board_school.id %}" class="w3-button w3-teal">לערוך</a>
-                        <a href="{% url 'deleteBoardSchool' board_school.id %}" class="w3-button w3-teal">למחוק</a>
+                        <a href="{% url 'editBoardSchool' board_school.id %}" class="w3-button w3-gray">לערוך</a>
+                        <a href="{% url 'deleteBoardSchool' board_school.id %}" class="w3-button w3-gray">למחוק</a>
                         {% endif %}
                     </th>
                 </tr>
@@ -87,7 +98,7 @@
 
         <dwasiv class="w3-bar">
             {% if user.username == 'Admin' %}
-            <a href="{% url 'addBoardSchool' %}" class="w3-button w3-teal">הוספת הודעה</a>
+            <a href="{% url 'addBoardSchool' %}" class="w3-button w3-gray">הוספת הודעה</a>
             {% endif %}
 
 

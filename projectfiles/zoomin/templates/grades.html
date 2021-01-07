@@ -5,51 +5,137 @@
 {% block content %}
 
 <html>
+<head>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
+
+</head>
 <body>
+<body style="background-color:#fffdd0;" dir="rtl">
+ <style>
+     a:link, a:visited {
+         background-color: #B7E9F7;
+         color: black;
+         border: 2px solid black;
+         padding: 10px 20px;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+     }
 
-
-<body style="background-color:#fffdd0;">
-<center>
-  <p class="w3-xxlarge font-effect-shadow-multiple">ציונים</p>
-
-  <style>
-    a:link, a:visited {
-        background-color: #B7E9F7;
-        color: black;
-        border: 1px solid black;
-        padding: 10px 60px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    a:hover, a:active {
-        background-color: #DBF3FA;
-        color: white;
-    }
-    .w3-lobster {
+     a:hover, a:active {
+         background-color: #DBF3FA;
+         color: white;
+     }
+     .w3-lobster {
     font-family: "Lobster", Sans-serif;
     }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+  table, th, td {
+          border: 2px solid black;
+          border-collapse: collapse;
+      }
+
+      th, td {
+          padding: 7px;
+      }
+
+      input {
+          text-align: right;
+      }
+
+      td {
+          text-align: right;
+      }
+
+      th {
+          text-align: right;
+      }
+      h3 {
+  background-color:  #ffffff80
+}
 </style>
 
 
-  <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">ציונים</a>
-  <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-  <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
-  <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-  <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+<center>
+  <p class="w3-xxlarge font-effect-shadow-multiple">דף ציונים</p>
+
+
+<div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
 
 
 
+      <body style="background-color:#DBF3FA;">
+
+              <p align="left">.</p>
+
+
+               <table class="w3-border">
+            <thead>
+                <tr class="w3-cyan">
+
+                  <th><center>ת.ז:</center></th>
+                  <th><center>חשבון:</center></th>
+                  <th><center>היסטוריה:</center></th>
+                  <th><center>תנ"ך:</center></th>
+                  <th><center>גאוגרפיה:</center></th>
+                  <th><center>לשון:</center></th>
+                  <th><center>ספרות:</center></th>
+                  <th><center>ספורט:</center></th>
+                    {% if user.userprofile.Code == '251' or user.username == 'Admin' %}
+                  <th><center>אפשרויות:</center></th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in object_list %}
+
+                <tr>
+
+                    {% if i.Code == '0' %}
+                    <th><center><b><h3>{{ i.ID_Number }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro1 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro2 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro3 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro4 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro5 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro6 }}</b></h3></center></th>
+                    <th><center><b><h3>{{ i.pro7 }}</b></h3></center></th>
+                    {% if user.userprofile.Code == '251' or user.username == 'Admin' %}
+                    <th><center><a href="{% url 'gradesedit' i.id %}" class="w3-button w3-gray">עריכת משתמש</a></center></th>
+                    {% endif %}
+                    {% endif %}
+
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+      </body>
 </div>
 </center>
 </body>
+</body>
+</html>
+
 {% endblock %}
+

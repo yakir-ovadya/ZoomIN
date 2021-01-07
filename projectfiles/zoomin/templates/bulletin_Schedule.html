@@ -20,6 +20,10 @@
         text-decoration: none;
         display: inline-block;
     }
+    table, th, td {
+          border: 2px solid black;
+          border-collapse: collapse;
+      }
 
     a:hover, a:active {
         background-color: #DBF3FA;
@@ -28,6 +32,15 @@
     .w3-lobster {
     font-family: "Lobster", Sans-serif;
     }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+h3 {
+  background-color:  #ffffff80
+}
 </style>
 
 
@@ -35,22 +48,21 @@
     <center>
         <p class="w3-xxlarge font-effect-shadow-multiple">לוח מבחנים</p>
 
-        <div class="w3-bar w3-border w3-light-black">
-            <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
-            <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מבחנים</a>
-            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-            <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
-            <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-            <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
-
-        </div>
+<div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
 
         {% if professions %}
-        <table class="w3-table-all w3-card-4">
+        <table class="w3-border w3-card-4" dir="rtl">
             <thead>
-                <tr class="w3-teal">
+                <tr class="w3-cyan">
 
                     <th>שם המקצוע</th>
                     <th>תאריך</th>
@@ -64,14 +76,14 @@
             <tbody>
                 {% for Test_Schedule in professions  %}
                 <tr>
-                    <th>{{ Test_Schedule.profession }}</th>
-                    <th>{{ Test_Schedule.date }}</th>
-                    <th>{{ Test_Schedule.start_time }}</th>
-                    <th>{{ Test_Schedule.end_time }}</th>
+                    <th><b><h3>{{ Test_Schedule.profession }}</b></h3></th>
+                    <th><b><h3>{{ Test_Schedule.date }}</b></h3></th>
+                    <th><b><h3>{{ Test_Schedule.start_time }}</b></h3></th>
+                    <th><b><h3>{{ Test_Schedule.end_time }}</b></h3></th>
                     <th>
                         {% if user.username == 'Admin' %}
-                        <a href="{% url 'editTest' Test_Schedule.id %}" class="w3-button w3-teal">לערוך</a>
-                        <a href="{% url 'deleteTest' Test_Schedule.id %}" class="w3-button w3-teal">למחוק</a>
+                        <a href="{% url 'editTest' Test_Schedule.id %}" class="w3-button w3-gray">לערוך</a>
+                        <a href="{% url 'deleteTest' Test_Schedule.id %}" class="w3-button w3-gray">למחוק</a>
                         {% endif %}
                     </th>
                 </tr>
@@ -85,11 +97,8 @@
 
         <dwasiv class="w3-bar">
             {% if user.username == 'Admin' %}
-            <a href="{% url 'addTest' %}" class="w3-button w3-teal">הוספת מבחן</a>
+            <a href="{% url 'addTest' %}" class="w3-button w3-gray">הוספת מבחן</a>
             {% endif %}
-
-
-        </dwasiv>
         </div>
 
 

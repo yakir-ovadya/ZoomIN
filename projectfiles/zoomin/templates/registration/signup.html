@@ -4,16 +4,47 @@
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-<body style="background-color:#fffdd0;">
-<center>
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {{ profile_form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
-  <img src="https://s3-eu-west-1.amazonaws.com/uploads.playbaamboozle.com/uploads/images/85154/1595344305_44032";>
+<head>
+<style>
+body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+div {
+  background-color:  #ffffff25
+}
+
+</style>
+</head>
+<body>
+  <center>
+<h1 style="font-size:70px;">ZoomIn</h1>
+<h2>:דף הרשמה לאתר</h2>
 </center>
+<div class="container px-lg-5" >
+  <div style="text-align:left">
+    <div class="col mx-lg-n5">
+      <div class="row py-3 px-lg-5">
+        <div class="row py-3 px-lg-5 border bg-light">
+          <form method="post">
+
+              {% csrf_token %}
+              <h3><b>{{ profile_form.as_table }}</b></h3><br><br>
+              <div style dir="ltr">
+             <h3><b>{{ form.as_table }}</b></h3>
+
+                <button class="w3-button w3-block w3-black" style="width:10%">הירשם</button>
+               <b><center><p style="font-size:25px;" dir="rtl">לחזרה לדף הבית לחץ:<button type="submit"><a href="/" >כאן</a></button></p></center></b>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 </body>
+
 {% endblock %}
