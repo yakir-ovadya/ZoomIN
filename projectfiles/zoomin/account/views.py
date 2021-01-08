@@ -60,7 +60,7 @@ def grades(request):
 
 
 def calendar(request):
-    return render(request, 'contact_page.html')
+    return render(request, 'calendar.html')
 
 
 def presence(request):
@@ -250,10 +250,6 @@ def editpresence(request, id):
 class showthis(ListView):
     model = UserProfile
     template_name = 'presence.html'
-
-class showthis2(ListView):
-    model = UserProfile
-    template_name = 'contact_page.html'
 
 def editpre(request, id):
     user_status = UserProfile.objects.get(id=id)

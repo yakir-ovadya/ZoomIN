@@ -4,7 +4,7 @@ from django.urls import path
 from .views import schedule, register, grades, bulletin_board, bulletin_Schedule, presence, schedule, Username_Recovery, \
     bulletin_board_class, addBoardSchool, editBoardSchool, deleteBoardSchool,addBoardClass,editBoardClass,deleteBoardClass,\
     addSchedule, editSchedule, deleteSchedule, addTest, deleteTest, editTest, SearchResultsView, editSearch, deleteSearch,\
-    addpresence, editpresence, showthis, editpre, show_grades, gradesedit, showthis2
+    addpresence, editpresence, showthis, editpre, show_grades, gradesedit
 urlpatterns = [
     path('signup', register, name='signup'),
 
@@ -38,8 +38,6 @@ urlpatterns = [
 
     path('grades', show_grades.as_view(), name='grades'),
     path('grades/gradesedit/<int:id>', gradesedit , name='gradesedit'),
-
-    path('contact_page/', showthis2.as_view(), name='contact_page'),
 
 
 
