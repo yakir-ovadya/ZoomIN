@@ -98,7 +98,7 @@ h3 {
             {% endif %}
 
             <dwasiv class="w3-bar">
-                {% if user.username == 'Admin' %}
+                {% if user.userprofile.Code == '251' %}
                 <a href="{% url 'addBoardClass' %}" class="w3-button w3-gray">הוספת הודעה</a>
                 {% endif %}
 

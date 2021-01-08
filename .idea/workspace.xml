@@ -21,36 +21,18 @@
   <component name="ChangeListManager">
     <list default="true" id="61e74be2-b205-4170-bf47-f9cb34a2c5cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0027_auto_20210106_1620.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0027_auto_20210106_1620.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0028_auto_20210106_1759.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0028_auto_20210106_1759.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0029_userprofile_in_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0029_userprofile_in_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0030_auto_20210106_2014.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/migrations/0030_auto_20210106_2014.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/UsernameRecovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/UsernameRecovery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_Schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_Schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_board.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_board_class.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/add_bulletin_board_class.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/addpresence.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/addpresence.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/addschedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/addschedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_Schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_Schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/schedule/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board_class.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board_class.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/editpre.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/editpre.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/edituser.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/edituser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/grades.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/grades.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/presence.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/presence.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/password_reset_complete.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/password_reset_complete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/password_reset_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/password_reset_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/password_reset_form.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/registration/signup.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/search_results.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/search_results.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
