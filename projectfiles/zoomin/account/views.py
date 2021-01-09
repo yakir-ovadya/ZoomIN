@@ -13,7 +13,7 @@ from .models import schedule_mod, board_school, board_class, Test_Schedule, User
 
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
-from .forms import SearchForm, username_rec_Form
+from .forms import SearchForm
 
 
 def index(request):
@@ -276,12 +276,3 @@ def gradesedit(request, id):
             user_edit_grade.save()
         return redirect('grades')
     return render(request, 'gradesedit.html', {'user_edit_grade': user_edit_grade})
-
-class username_rec(ListView):
-    model = UserProfile
-    template_name = 'username_rec_res.html'
-
-    def get_queryset(self): # new
-        query = self.request.GET.get('q')
-        object_list = UserProfile.objects.filter(Q(ID_Number__icontains=query))
-        return object_list

@@ -15,7 +15,7 @@
          text-align:center
      }
      p {
-         text-align: center
+         text-align: right
      }
      label {
          text-align:left
@@ -34,20 +34,14 @@
 <body style="background-color:#fffdd0;">
 <h1 style="font-size:70px;">ZoomIn</h1>
 <h1>שחזור שם משתמש</h1>
-<center>
-
-
-<h3 style="font-size:25px;">הקש/י את מספר תעודת הזהות שלך על מנת לשחזר את שם המשתמש:</h3>
-
-  <div class="search">
-  <form action="{% url 'username_rec_res' %}" method="get" style="margin:auto;max-width:300px" dir="rtl">
-  <input type="text" name="q" placeholder="הזן מספר ת.ז..."><button type="submit">חפש</button>
-
-  </form>
-  </div>
-</center>
-<!--<p style="font-size:25px;">לסיום לחץ:<button type="submit"><a href="/UsernameRecovery" >כאן</a></button></p>-->
-<p style="font-size:25px;">לחזרה לדף הבית: <button type="submit"><a style="font-size:20px;" href="/" >לחץ כאן !</a></button></p>
+ <h2>על מנת לשחזר את שם המשתמש נא לבצע את הפעולות הבאות:</h2>
+<h3 style="font-size:25px;">נא למלא את השדות החסרים:</h3>
+<p style="font-size:20px;"><label>*שם פרטי:</label><input type="text" id="First Name" value=""></p>
+<p style="font-size:20px;"><label>*שם משפחה:</label><input type="text" id="Last Name" value=""></p>
+<p style="font-size:20px;"><label>*תעודת זהות:</label><input type="text" id="ID" value=""></p>
+<p style="font-size:20px;"><label>*כתובת מייל:</label><input type="text" id="Email Address" value=""></p>
+<center><p style="font-size:25px;">לסיום לחץ:<button type="submit"><a href="/UsernameRecovery" >כאן</a></button></p></center>
+<center><p style="font-size:25px;">לחזרה לדף הבית לחץ:<button type="submit"><a href="/" >כאן</a></button></p></center><!-- יש לבצע שליחה של שם המשתמש למייל מה DB-->
 </body>
 {% endblock %}
 </html>

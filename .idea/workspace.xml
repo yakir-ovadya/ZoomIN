@@ -19,23 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61e74be2-b205-4170-bf47-f9cb34a2c5cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/UsernameRecovery.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/UsernameRecovery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_Schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_Schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board_class.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/bulletin_board_class.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/templates/schedule.html" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/templates/schedule.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectfiles/zoomin/zoomin/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/projectfiles/zoomin/zoomin/settings.py" afterDir="false" />
-    </list>
+    <list default="true" id="61e74be2-b205-4170-bf47-f9cb34a2c5cb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,23 +45,23 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/Hackathon2020Group17" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\shter\Desktop\copia actualizada pj\projectfiles\zoomin\templates" />
-      <recent name="C:\Users\shter\Documents\GitHub\Hackathon2020Group17\projectfiles\zoomin\templates" />
-      <recent name="C:\Users\shter\Documents\GitHub\Hackathon2020Group17\projectfiles\zoomin\account" />
-      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule" />
-      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Teacher" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates\" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule\schedule" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\account" />
       <recent name="C:\Users\Yak\Desktop\pythonProject5\projectfiles\zoomin" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shter\Desktop\copia actualizada pj\projectfiles\zoomin\templates" />
+      <recent name="C:\Users\shter\Documents\GitHub\Hackathon2020Group17\projectfiles\zoomin\templates" />
+      <recent name="C:\Users\shter\Documents\GitHub\Hackathon2020Group17\projectfiles\zoomin\account" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule" />
+      <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\Teacher" />
     </key>
   </component>
   <component name="RunManager">
@@ -88,9 +72,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\Nadav\ZoomIn-Project\Scripts\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -125,6 +109,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
