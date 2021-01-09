@@ -21,6 +21,7 @@ class UserProfile(models.Model):
     pro6 = models.CharField('ספרות',max_length=30,default='לא ניתן ציון', null=True, blank=True)
     pro7 = models.CharField('ספורט',max_length=30,default='לא ניתן ציון', null=True, blank=True)
 
+
     class Meta:
         verbose_name_plural = "userprofile"
 
@@ -33,7 +34,7 @@ class board_school(models.Model):
     id = models.AutoField(primary_key=True)
     topic = models.CharField('נושא',max_length=100, blank=False, null=False)
     description = models.TextField('תיאור', max_length=300, blank=True , null=True)
-    publication_date = models.DateField('תאריך',default=date.today())
+    publication_date = models.DateField('תאריך',default=str(date.today()))
 
     class Meta:
         verbose_name = 'Board_school'
@@ -49,7 +50,7 @@ class board_class(models.Model):
     id = models.AutoField(primary_key=True)
     topic = models.CharField('נושא',max_length=100, blank=False, null=False)
     description = models.TextField('תיאור', max_length=300, blank=True , null=True)
-    publication_date = models.DateField('תאריך',default=date.today())
+    publication_date = models.DateField('תאריך',default=str(date.today()))
     class Meta:
         verbose_name = 'Board_class'
         verbose_name_plural = 'Board_class'
@@ -88,9 +89,9 @@ class schedule_mod(models.Model):
 class Test_Schedule(models.Model):
     id = models.AutoField(primary_key=True)
     profession = models.CharField('מקצוע',max_length=100, blank=False, null=False)
-    date = models.DateField('תאאריך',default=date.today(), blank=True , null=True)
-    start_time = models.TimeField('שעת התחלה',auto_now=False, auto_now_add=False, null=True)
-    end_time = models.TimeField('שעת סיום',auto_now=False, auto_now_add=False, null=True)
+    date = models.DateField('תאאריך',default=str(date.today()), blank=True , null=True)
+    start_time = models.CharField('שעת התחלה',max_length=30,default='09:00', null=True, blank=True)
+    end_time = models.CharField('שעת סיום',max_length=30,default='12:00', null=True, blank=True)
     class Meta:
         verbose_name = 'Test_Schedule'
         verbose_name_plural = 'Test_Schedule'
@@ -107,7 +108,7 @@ class Presence_mod(models.Model):
     Last_Name = models.CharField("שם משפחה", max_length=30, null=True, blank=True)
     exist = models.BooleanField("נוכח", default=False)
     not_exist = models.BooleanField("לא נוכח", default=False)
-    date = models.DateField("תאריך", default=date.today(), blank=True , null=True)
+    date = models.DateField("תאריך", default=str(date.today()), blank=True , null=True)
     profession = models.CharField("מקצוע", max_length=30, null=True, blank=True)
     hour = models.TimeField("שעה", auto_now=False, auto_now_add=False, null=True)
     val = [First_Name, Last_Name, exist, not_exist, date, profession, hour]

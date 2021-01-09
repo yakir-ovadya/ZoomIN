@@ -69,23 +69,27 @@ h3 {
                     <th>שעות התחלה</th>
                     <th>שעות סיום</th>
                     {% if user.username == 'Admin' %}
-                    <th>לערוך</th>
+                    <th>אפשרויות</th>
                     {% endif %}
+
                 </tr>
             </thead>
             <tbody>
                 {% for Test_Schedule in professions  %}
                 <tr>
-                    <th><b><h3>{{ Test_Schedule.profession }}</b></h3></th>
-                    <th><b><h3>{{ Test_Schedule.date }}</b></h3></th>
-                    <th><b><h3>{{ Test_Schedule.start_time }}</b></h3></th>
-                    <th><b><h3>{{ Test_Schedule.end_time }}</b></h3></th>
-                    <th>
+                    <th><h3><b>{{ Test_Schedule.profession }}</b></h3></th>
+                    <th><h3><b>{{ Test_Schedule.date }}</b></h3></th>
+                    <th><h3><b>{{ Test_Schedule.start_time }}</b></h3></th>
+                    <th><h3><b>{{ Test_Schedule.end_time }}</b></h3></th>
+
                         {% if user.username == 'Admin' %}
+                        <th>
                         <a href="{% url 'editTest' Test_Schedule.id %}" class="w3-button w3-gray">לערוך</a>
                         <a href="{% url 'deleteTest' Test_Schedule.id %}" class="w3-button w3-gray">למחוק</a>
+                            </th>
                         {% endif %}
-                    </th>
+
+
                 </tr>
                 {% endfor %}
             </tbody>
@@ -101,7 +105,11 @@ h3 {
             {% endif %}
         </div>
 
+        </dwasiv>
 
     </center>
+
 </body>
+
+</html>
 {% endblock content %}
