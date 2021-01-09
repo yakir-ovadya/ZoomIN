@@ -111,10 +111,6 @@ h3 {
                         <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-gray">עריכה</a>
                         <a href="{% url 'deleteSchedule' schedule_mod.id %}" class="w3-button w3-gray">מחיקה</a>
                         {% endif %}
-                        {% if user.userprofile.Code == '251' %}
-                        <a href="{% url 'editSchedule' schedule_mod.id %}" class="w3-button w3-gray">עריכה</a>
-                        <a href="{% url 'deleteSchedule' schedule_mod.id %}" class="w3-button w3-gray">מחיקה</a>
-                        {% endif %}
                     </th>
                 </tr>
                 {% endfor %}
@@ -150,9 +146,7 @@ window.addeventasync = function(){
         </dwasiv>
         </div>
 
-                </table>
+
     </center>
 </body>
-</html>
-
 {% endblock content %}

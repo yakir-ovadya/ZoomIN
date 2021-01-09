@@ -69,8 +69,8 @@ h3 {
                         <th>נושא</th>
                         <th>תיאור</th>
                         <th>תאריך</th>
-                        {% if user.userprofile.Code == '251' %}
-                        <th>אפשרויות:</th>
+                        {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
+                        <th>לערוך</th>
                         {% endif %}
                     </tr>
                 </thead>
@@ -81,14 +81,13 @@ h3 {
                         <th><h3><b>{{ board_class.topic }}</b></h3></th>
                         <th><h3><b>{{ board_class.description }}</b></h3></th>
                         <th><h3><b>{{ board_class.publication_date }}</b></h3></th>
-                        {% if user.userprofile.Code == '251' %}
+
                         <th>
-
-                            <a href="{% url 'editBoardClass' board_class.id %}" class="w3-button w3-gray">עריכה</a>
-                            <a href="{% url 'deleteBoardClass' board_class.id %}" class="w3-button w3-gray">מחיקה</a>
-
+                            {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
+                            <a href="{% url 'editBoardClass' board_class.id %}" class="w3-button w3-gray">לערוך</a>
+                            <a href="{% url 'deleteBoardClass' board_class.id %}" class="w3-button w3-gray">למחוק</a>
+                            {% endif %}
                         </th>
-                         {% endif %}
                     </tr>
                     {% endfor %}
                 </tbody>
