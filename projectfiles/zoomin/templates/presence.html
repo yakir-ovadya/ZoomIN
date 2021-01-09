@@ -1,15 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}Login{% endblock %}
+{% block title %}נוכחות{% endblock %}
 
 {% block content %}
 
 <html>
+<head>
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 
+</head>
+<body>
+<body style="background-color:#fffdd0;" dir="rtl">
  <style>
      a:link, a:visited {
          background-color: #B7E9F7;
@@ -25,23 +29,36 @@
          background-color: #DBF3FA;
          color: white;
      }
+     .w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
 </style>
 
-<body style="background-color:#fffdd0;">
+
 <center>
-<h2>דף נוכחות</h2>
+  <p class="w3-xxlarge font-effect-shadow-multiple">דף נוכחות</p>
+
+
 <div class="w3-bar w3-border w3-light-black">
-  <a href="{% url 'home' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Home</a>
-  <a href="{% url 'grades' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-  <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-  <a href="{% url 'schedule' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-  <a href="{% url 'presence' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile w3-black">נוכחות</a>
-  <a href="{% url 'bulletin_board' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">לוח מודעות</a>
-  <a href="{% url 'logout' %}" style="width:14.28%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile w3-black">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
 
   <style>
       table, th, td {
-          border: 1px solid black;
+          border: 2px solid black;
           border-collapse: collapse;
       }
 
@@ -60,121 +77,56 @@
       th {
           text-align: right;
       }
+      h3 {
+  background-color:  #ffffff80
+}
   </style>
-  </head>
+
 
 
       <body style="background-color:#DBF3FA;">
-          <center>
+
               <p align="left">.</p>
 
-              </style>
-              </head>
-              <body>
 
-                  <table style="width:40%">
-                      <tr>
-                          <th>לא נוכח</th>
-                          <th>נוכח</th>
-                          <th>שם התלמיד</th>
+               <table class="w3-border">
+            <thead>
+                <tr class="w3-cyan">
+                  <th><center>שם פרטי:</center></th>
+                  <th><center>שם משפחה:</center></th>
 
-                      </tr>
-                      <tr>
-                          
-                          <td><input type="checkbox" id="s1" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s1" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s2" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s2" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s3" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s3" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s5" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s5" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s6" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s6" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s7" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s7" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s8" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s8" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s9" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s9" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s10" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s10" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s11" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s11" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s12" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s12" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s13" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s13" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s14" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s14" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s15" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s15" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s16" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s16" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s17" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s17" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s18" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s18" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                      <tr>
-                          <td><input type="checkbox" id="s19" name="vehicle1"></td>
-                          <td><input type="checkbox" id="s19" name="vehicle1"></td>
-                          <th><input type="text" id="fname" name="fname" value=""></th>
-                      </tr>
-                  </table>
-                  <button type="button" onclick="alert('השינויים נשמרו בהצלחה!')">!שמירת שינויים</button>
-          </center>
+                    <th><center>סטטוס:</center></th>
+                    {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
+                  <th><center>אפשרויות:</center></th>
+                    {% endif %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in object_list %}
+                {% if i.Code == '0' %}
+                <tr>
+
+                    <th><center><h3><b>{{ i.First_Name }}</b></h3></center></th>
+                    <th><center><h3><b>{{ i.Last_Name }}</b></h3></center></th>
+                    <th><center><h3><b>{{ i.in_class }}</b></h3></center></th>
+
+
+                  {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
+                  <th><center><a href="{% url 'editpre' i.id %}" class="w3-button w3-gray">עריכת סטטוס</a></center></th>
+                  {% endif %}
+                </tr>
+                {% endif %}
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+      </body>
 </div>
-
 </center>
 </body>
+</body>
+</html>
+
 {% endblock %}
+

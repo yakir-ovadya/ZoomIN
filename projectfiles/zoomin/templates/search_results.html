@@ -8,7 +8,7 @@
 <title>W3.CSS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
 <style>
     a:link, a:visited {
         background-color: #B7E9F7;
@@ -24,31 +24,50 @@
         background-color: #DBF3FA;
         color: white;
     }
+    .w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.search {
+    font-size: 11px;
+    letter-spacing: 0px;
+    text-align: right;
+}
+h3 {
+  background-color:  #ffffff80
+}
 </style>
 
 
 <body style="background-color:#fffdd0;" dir="rtl">
     <center>
-        <h2>תוצאת חיפוש משתמש:</h2>
+        <p class="w3-xxlarge font-effect-shadow-multiple">תוצאת חיפוש משתמש:</p>
 
 
-
-        <div class="w3-bar w3-border w3-light-black">
-            <a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Home</a>
-            <a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
-            <a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
-            <a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
-            <a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
-            <a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
-            <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
-            <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">Log Out</a>
-
-        </div>
-
-
-        <table class="w3-table-all">
+  <div class="w3-bar w3-border w3-light-black">
+<a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
+<a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
+<a href="{% url 'bulletin_board' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - בית ספר</a>
+<a href="{% url 'presence' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">נוכחות</a>
+<a href="{% url 'schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">מערכת שעות</a>
+<a href="{% url 'bulletin_Schedule' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מבחנים</a>
+<a href="{% url 'grades' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">ציונים</a>
+<a href="{% url 'home' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">בית</a>
+</div>
+  <div class="search">
+  <form action="{% url 'search_results' %}" method="get" style="margin:auto;max-width:300px" dir="rtl">
+  <input type="text" name="q" placeholder="חיפוש..">
+  <button type="submit">חפש</button>
+  </form>
+  </div>
+        <table class="w3-border">
             <thead>
-                <tr class="w3-teal">
+                <tr class="w3-cyan">
 
                   <th><center>שם פרטי:</center></th>
                   <th><center>שם משפחה:</center></th>
@@ -66,20 +85,20 @@
                 {% for userprofile in object_list %}
                 <tr>
 
-                  <th><center>{{ userprofile.First_Name }}</center></th>
-                  <th><center>{{ userprofile.Last_Name }}</center></th>
-                  <th><center>{{ userprofile.Code }}</center></th>
-                  <th><center>{{ userprofile.ID_Number }}</center></th>
-                  <th><center>{{ userprofile.user.username }}</center></th>
-                  <th><center>{{ userprofile.user.email }}</center></th>
+                    <th><center><h3><b>{{ userprofile.First_Name }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.Last_Name }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.Code }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.ID_Number }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.user.username }}</b></h3></center></th>
+                  <th><center><h3><b>{{ userprofile.user.email }}</b></h3></center></th>
 
 
 
                     {% if user.username == 'Admin' %}
                     <th>
                       <center>
-                        <a href="{% url 'editSearch' userprofile.id %}" class="w3-button w3-teal">עריכת משתמש</a>
-                        <a href="{% url 'deleteSearch' userprofile.id %}" class="w3-button w3-teal">מחיקת משתמש</a>
+                        <a href="{% url 'editSearch' userprofile.id %}" class="w3-button w3-gray">עריכת משתמש</a>
+                        <a href="{% url 'deleteSearch' userprofile.id %}" class="w3-button w3-gray">מחיקת משתמש</a>
                     {% endif %}
                       </center>
                     </th>
