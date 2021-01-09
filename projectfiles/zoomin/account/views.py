@@ -13,7 +13,7 @@ from .models import schedule_mod, board_school, board_class, Test_Schedule, User
 
 from django.views.generic import TemplateView, ListView
 from django.db.models import Q
-from .forms import SearchForm, username_rec_Form
+from .forms import SearchForm
 
 
 def index(request):
@@ -285,3 +285,7 @@ class username_rec(ListView):
         query = self.request.GET.get('q')
         object_list = UserProfile.objects.filter(Q(ID_Number__icontains=query))
         return object_list
+
+class showthis2(ListView):
+    model = UserProfile
+    template_name = 'contact_page.html'

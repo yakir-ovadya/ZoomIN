@@ -91,7 +91,7 @@ class Test_Schedule(models.Model):
     profession = models.CharField('מקצוע',max_length=100, blank=False, null=False)
     date = models.DateField('תאאריך',default=str(date.today()), blank=True , null=True)
     start_time = models.CharField('שעת התחלה',max_length=30,default='09:00', null=True, blank=True)
-    end_time = models.CharField('שעת סיום',max_length=30,default='12:00', null=True, blank=True)
+    end_time = models.CharField('שעת סיום',max_length=30,default='11:00', null=True, blank=True)
     class Meta:
         verbose_name = 'Test_Schedule'
         verbose_name_plural = 'Test_Schedule'

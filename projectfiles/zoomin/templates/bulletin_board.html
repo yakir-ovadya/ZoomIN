@@ -81,12 +81,14 @@ h3 {
                     <th><h3><b>{{ board_school.description }}</b></h3></th>
                     <th><h3><b>{{ board_school.publication_date }}</b></h3></th>
 
-                    <th>
+
                         {% if user.username == 'Admin' %}
+                    <th>
                         <a href="{% url 'editBoardSchool' board_school.id %}" class="w3-button w3-gray">לערוך</a>
                         <a href="{% url 'deleteBoardSchool' board_school.id %}" class="w3-button w3-gray">למחוק</a>
+                        </th>
                         {% endif %}
-                    </th>
+
                 </tr>
                 {% endfor %}
             </tbody>
