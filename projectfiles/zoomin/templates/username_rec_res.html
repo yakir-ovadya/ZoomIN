@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}שחזור שם משתמש{% endblock %}
+
+{% block content %}
+
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster&effect=shadow-multiple">
+<style>
+    a:link, a:visited {
+        background-color: #B7E9F7;
+        color: black;
+        border: 1px solid black;
+        padding: 10px 60px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    a:hover, a:active {
+        background-color: #DBF3FA;
+        color: white;
+    }
+    .w3-lobster {
+    font-family: "Lobster", Sans-serif;
+    }
+    body {
+  background-image: url('https://www.renovations-israel.co.il/wp-content/uploads/2019/09/chipui-kirot-pnim-blog.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.search {
+    font-size: 11px;
+    letter-spacing: 0px;
+    text-align: right;
+}
+h3 {
+  background-color:  #ffffff80
+}
+</style>
+
+
+<body style="background-color:#fffdd0;" dir="rtl">
+    <center>
+        <p class="w3-xxlarge font-effect-shadow-multiple">תוצאת חיפוש שם משתמש:</p>
+
+        {% if object_list %}
+        <table class="w3-border">
+            <thead>
+                <tr class="w3-cyan">
+
+                  <th><center>שם המשתמש שלך הוא:</center></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for userprofile in object_list %}
+                <tr>
+
+                  <th><center><h3><b>{{ userprofile.user.username }}</b></h3></center></th>
+
+
+
+
+
+                    </th>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+        <p style="font-size:25px;">מעבר לדף ההתחברות: <button type="submit"><a style="font-size:20px;" href="{% url 'login' %}" >לחץ כאן !</a></button></p>
+        {% else %}
+        <p class="w3-xxlarge font-effect-shadow-multiple">לא נמצאו תוצאות</p>
+        <p style="font-size:25px;">לניסיון שחזור חדש: <button type="submit"><a style="font-size:20px;" href="{% url 'usernamerecovery' %}" >לחץ כאן !</a></button></p>
+        <p style="font-size:25px;">לחזרה לדף הבית: <button type="submit"><a style="font-size:20px;" href="/" >לחץ כאן !</a></button></p>
+        {% endif %}
+
+
+
+
+    </center>
+</body>
+{% endblock content %}
