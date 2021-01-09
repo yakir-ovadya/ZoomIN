@@ -50,6 +50,9 @@ class Test_ScheduleCheck(forms.ModelForm):
 class SearchForm(forms.Form):
     q = forms.CharField(label='Search', max_length=50)
 
+class username_rec_Form(forms.Form):
+    q = forms.CharField(label='Search', max_length=50)
+
 
 class Presence_form(forms.ModelForm):
     class Meta:

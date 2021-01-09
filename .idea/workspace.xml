@@ -45,16 +45,16 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/Hackathon2020Group17" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hackathon2020Group17" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Yak\Desktop\25\projectfiles\zoomin\templates" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\templates\" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\schedule\schedule" />
       <recent name="C:\Users\shter\Desktop\pj\projectfiles\zoomin\account" />
-      <recent name="C:\Users\Yak\Desktop\pythonProject5\projectfiles\zoomin" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shter\Desktop\copia actualizada pj\projectfiles\zoomin\templates" />
@@ -72,9 +72,9 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\Nadav\ZoomIn-Project\Scripts\python.exe" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
@@ -110,10 +110,48 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1610011883869">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/-1920.-70.1920.1040@0.0.1536.824" timestamp="1609967786893" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1610011883869" />
+    <state x="-963" y="-57" width="952" height="1026" key="dock-window-1" timestamp="1609967959859">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
+    </state>
+    <state x="-916" y="-70" width="851" height="1022" key="dock-window-1/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609926085731" />
+    <state x="-963" y="-57" width="952" height="1026" key="dock-window-1/0.0.1536.824/-1920.-70.1920.1040@0.0.1536.824" timestamp="1609967959859" />
+    <state x="2375" y="0" width="876" height="648" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855251980" />
+    <state x="-936" y="-70" width="952" height="1026" key="dock-window-2" timestamp="1609926387339">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
+    </state>
+    <state x="-936" y="-70" width="952" height="1026" key="dock-window-2/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609926387339" />
+    <state x="1926" y="0" width="1135" height="769" key="dock-window-2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855480164" />
+    <state x="-956" y="-70" width="882" height="1026" key="dock-window-3" timestamp="1609926697430">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
+    </state>
+    <state x="-956" y="-70" width="882" height="1026" key="dock-window-3/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609926697430" />
+    <state x="1992" y="0" width="1135" height="769" key="dock-window-3/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855536317" />
+    <state x="1920" y="0" width="1135" height="769" key="dock-window-4" timestamp="1609855603698">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="0" width="1135" height="769" key="dock-window-4/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855603698" />
+    <state x="1946" y="0" width="1135" height="769" key="dock-window-5" timestamp="1609855603698">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1946" y="0" width="1135" height="769" key="dock-window-5/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609855603698" />
+    <state x="2013" y="0" width="1135" height="769" key="dock-window-6" timestamp="1609858781551">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2013" y="0" width="1135" height="769" key="dock-window-6/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609858781551" />
+    <state x="2164" y="0" width="1135" height="648" key="dock-window-7" timestamp="1609856040825">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2164" y="0" width="1135" height="648" key="dock-window-7/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1609856040825" />
+    <state x="-1777" y="160" width="672" height="678" key="search.everywhere.popup" timestamp="1609930505577">
+      <screen x="-1920" y="-70" width="1920" height="1040" />
+    </state>
+    <state x="-1777" y="160" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1920.-70.1920.1040@-1920.-70.1920.1040" timestamp="1609930505577" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

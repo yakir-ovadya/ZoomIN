@@ -273,15 +273,25 @@ form.example::after {
 <center>
 {% if user.is_authenticated %}
 {% if user.username == 'Admin' or user.userprofile.Code == '251' %}
+
   <div class="search">
+    <center>
   <form action="{% url 'search_results' %}" method="get" style="margin:auto;max-width:300px" dir="rtl">
   <input type="text" name="q" placeholder="חיפוש..">
   <button type="submit"><i class="fa fa-search"></i></button>
+
   </form>
+    </center>
   </div>
+
   <p class="w3-xxlarge font-effect-shadow-multiple" dir="rtl">ברוכים הבאים לעמוד הבית: ZoomIn</p>
     {% endif %}
-  Hi {{ user.username }}!
+  {% if user.username == 'Admin' %}
+
+  <h3> ! שלום מנהל הבית ספר</h3>
+  {% else %}
+  <h3>! {{ user.userprofile.First_Name }} {{ user.userprofile.Last_Name }} שלום</h3>
+  {% endif %}
 <div class="w3-bar w3-border w3-light-black">
 <a href="{% url 'logout' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">התנתקות</a>
 <a href="{% url 'bulletin_board_class' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">לוח מודעות - כיתה</a>
@@ -995,6 +1005,7 @@ function showSlides(n) {
 }
 </script>
 
+<a href="{% url 'contact_page' %}" style="width:12.5%" class="w3-bar-item w3-button w3-mobile">דף קשר</a>
 
 
 {% else %}
